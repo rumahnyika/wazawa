@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Wallet Fast Food - Tabata Segerea</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #fff9f9;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(to right, #43cea2, #185a9d);
+      color: white;
+      padding: 3rem 2rem;
+      text-align: center;
+      animation: slideInDown 1s ease;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    .intro {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem 1rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      animation: bounceIn 0.7s ease-in-out;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+    }
+
+    .card h3 {
+      color: #185a9d;
+      font-size: 1.2rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+    }
+
+    .info {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      animation: fadeUp 1s ease;
+    }
+
+    iframe {
+      width: 100%;
+      height: 300px;
+      margin-top: 1rem;
+      border: none;
+      border-radius: 10px;
+    }
+
+    @keyframes slideInDown {
+      from { opacity: 0; transform: translateY(-60px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(60px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes bounceIn {
+      0% { transform: scale(0.9); opacity: 0; }
+      60% { transform: scale(1.04); opacity: 1; }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🚚 Wallet Fast Food</h1>
+    <p>Chakula haraka, kitamu, na kisafi – ndani ya Tabata Segerea!</p>
+  </header>
+
+  <section>
+    <div class="intro">
+      <p>
+        Karibu kwenye Wallet Fast Food, kituo cha kisasa cha vyakula vya haraka vilivyopikwa na vijana wabunifu wa Segerea. Ipo ndani ya Tabata Segerea, Wallet Fast Food ni mahali pa ladha halisi ya mtaa, utamu wa asubuhi hadi usiku.
+      </p>
+      <p>
+        Hapa, kila mteja anahudumiwa kwa haraka, chakula safi kinapikwa mbele yako, na unaweza kuchukua ukienda kazini au kula hapo hapo. Wateja wetu hujumuisha wanafunzi, madereva, wafanyakazi, na wasanii wanaopenda huduma ya haraka na isiyo na usumbufu.
+      </p>
+    </div>
+
+    <div class="services">
+      <div class="card">
+        <h3>🍳 Breakfast ya Asubuhi</h3>
+        <p>Chapati, mayai, supu ya mbuzi, uji wa ngano, sambusa, maandazi na viazi vya kukaanga – kuanzia saa 12 alfajiri hadi saa 3 asubuhi.</p>
+      </div>
+
+      <div class="card">
+        <h3>🥘 Chakula cha Mchana</h3>
+        <p>Wali nyama, wali samaki, pilau, mchemsho wa ndizi, ugali kuku, ndizi nyama – vyote safi, moto, na vyenye viambato vya kutosha.</p>
+      </div>
+
+      <div class="card">
+        <h3>🥡 Takeaway Express</h3>
+        <p>Huduma ya kuchukua chakula kwa haraka – pakiti safi, usafi wa hali ya juu, na unaweza agiza hata ukiwa njiani kupitia simu.</p>
+      </div>
+
+      <div class="card">
+        <h3>🍗 Nyama Choma</h3>
+        <p>Kuku, mbuzi, na maini ya kuchoma – inatolewa kuanzia saa 10 jioni hadi usiku. Inakuja na kachumbari au ugali mdogo.</p>
+      </div>
+
+      <div class="card">
+        <h3>🧃 Juice Bar</h3>
+        <p>Juisi za ukwaju, miwa, nanasi, tango na tango-lemon. Hupatikana kila jioni. Baridi kama barafu!</p>
+      </div>
+
+      <div class="card">
+        <h3>📦 Special Orders & Catering</h3>
+        <p>Unataka order kubwa? Wallet Fast Food inakupikia hata kwa vikundi, ofisi au sherehe zako – wasiliana mapema tu.</p>
+      </div>
+    </div>
+
+    <div class="info">
+      <h2>📍 Mahali & Muda wa Huduma</h2>
+      <p><strong>Mahali:</strong> Tabata Segerea (eneo la kati, karibu na barabara kuu ya Sanene)</p>
+      <p><strong>Muda wa Huduma:</strong> Kila siku kutoka saa 12 alfajiri (6AM) hadi saa 5 usiku (11PM)</p>
+      <p><strong>Mawasiliano:</strong> Simu: <em>+255 712 345 678</em> | Instagram: <strong>@walletfastfood</strong></p>
+
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1984.3024001212452!2d39.152421777262024!3d-6.8353044931750315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x185c4c1f84d42975%3A0xd0d6b188b4f3d683!2sTabata%20Segerea!5e0!3m2!1sen!2stz!4v1719722201281!5m2!1sen!2stz" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </section>
+
+</body>
+</html>

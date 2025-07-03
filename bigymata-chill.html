@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kwa Bigymata Chill Spot - Tabata Segerea</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f0f9f4;
+      color: #222;
+    }
+
+    header {
+      background: linear-gradient(to right, #43c6ac, #191654);
+      color: white;
+      padding: 3rem 2rem;
+      text-align: center;
+      animation: slideInDown 1s ease;
+    }
+
+    header h1 {
+      font-size: 2.6rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    .intro {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+      animation: fadeIn 1.2s ease;
+    }
+
+    .vibe-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem 1rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+      animation: bounceIn 0.7s ease-in-out;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.02);
+    }
+
+    .card h3 {
+      color: #191654;
+      font-size: 1.2rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+    }
+
+    .info {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      animation: fadeUp 1s ease;
+    }
+
+    iframe {
+      width: 100%;
+      height: 300px;
+      margin-top: 1rem;
+      border: none;
+      border-radius: 10px;
+    }
+
+    @keyframes slideInDown {
+      from { opacity: 0; transform: translateY(-60px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(60px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes bounceIn {
+      0% { transform: scale(0.9); opacity: 0; }
+      60% { transform: scale(1.04); opacity: 1; }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🍃 Kwa Bigymata Chill Spot</h1>
+    <p>Sehemu ya kutulia, kupumzika na kuachia stress zako — ndani ya Tabata Segerea</p>
+  </header>
+
+  <section>
+    <div class="intro">
+      <p>
+        Ipo mahali tulivu ndani ya Tabata Segerea, Bigymata Chill Spot ni mahali pa wale wanaojua kutafuta mwanga wa ndani yao. Mandhari ya asili, viti vya mti, na hewa safi ya jioni huifanya sehemu hii kuwa ya kipekee kwa wale wanaotaka “kuconnect” na mazingira.
+      </p>
+      <p>
+        Bigymata haifai kila mtu. Ni kwa wale wanaojua utamu wa ukimya, wanaopenda kuzungumza kwa sauti ya chini, au kupotea katika muziki na tafakari. Hapa, hakuna haraka — ni kuhusu kuishi polepole. Iwe ni mchana wa jua kali au usiku wa kimya, Bigymata inakukaribisha.
+      </p>
+    </div>
+
+    <div class="vibe-cards">
+      <div class="card">
+        <h3>🌿 Miti na Hewa ya Asili</h3>
+        <p>Imetandwa kwa miti ya kivuli, eneo hili hujaa hewa safi ya asili inayokupa utulivu bila kelele za mtaa.</p>
+      </div>
+
+      <div class="card">
+        <h3>🎶 Muziki wa Reggae & Jazz</h3>
+        <p>Sound ya chini ya roots reggae, dub na classic jazz hutawala hewani – inabalance akili yako bro.</p>
+      </div>
+
+      <div class="card">
+        <h3>☕ Vinywaji Baridi na Moto</h3>
+        <p>Chai, kahawa ya mbuyu, juice za kawaida – hakikisha uko relaxed ukiwa na kikombe mkononi.</p>
+      </div>
+
+      <div class="card">
+        <h3>🛋️ Mazingira ya Viti vya Mbao</h3>
+        <p>Sehemu ya kukaa chini, baadhi ya watu hukaa kwenye blanketi – feeling ya old-school vibe iko juu.</p>
+      </div>
+
+      <div class="card">
+        <h3>🧠 Tafakari ya Kimya Kimya</h3>
+        <p>Wengi huja hapa kutafakari, kusoma, au kufanya maongezi ya kina na marafiki wa karibu tu.</p>
+      </div>
+
+      <div class="card">
+        <h3>😶 “Utulivu” wa Kipekee</h3>
+        <p>Wengine husema hapa ni “silent therapy”. Wale wanaojua wanajua. Mazingira mazuri kwa kupumzisha akili.</p>
+      </div>
+    </div>
+
+    <div class="info">
+      <h2>📍 Mahali & Muda</h2>
+      <p><strong>Mahali:</strong> Tabata Segerea, eneo la ndani kidogo kutoka barabara ya Sanene (behind the vibes 😉)</p>
+      <p><strong>Muda wa Kufunguliwa:</strong> Kila siku kutoka saa 10 jioni hadi usiku wa manane</p>
+      <p><strong>Mgeni Mpendwa:</strong> Ukitafuta utulivu, mjadala wa kiroho, au nafasi ya “kupotea kwa muda” — karibu kwa Bigymata</p>
+
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1984.2733041320937!2d39.152500077262065!3d-6.835780993174678!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x185c4c1f84d42975%3A0x9bc9f502b44d55ea!2sTabata%20Segerea!5e0!3m2!1sen!2stz!4v1719723203242!5m2!1sen!2stz" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Msikiti Mkuu wa Tabata</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #f4f9f4, #e0f7fa);
+      color: #2d2d2d;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px 20px;
+      background: linear-gradient(145deg, #009688, #004d40);
+      color: white;
+      position: relative;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      animation: fadeDown 1s ease-out;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 1.1rem;
+      animation: fadeUp 1.2s ease-out;
+    }
+
+    .image-section {
+      text-align: center;
+      padding: 30px;
+    }
+
+    .image-section img {
+      width: 90%;
+      max-width: 600px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      animation: zoomIn 1.5s ease;
+    }
+
+    .content-section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .content-section h2 {
+      font-size: 1.8rem;
+      color: #00695c;
+      margin-bottom: 10px;
+      position: relative;
+      animation: slideInLeft 1s ease-out;
+    }
+
+    .content-section p {
+      font-size: 1rem;
+      margin-bottom: 30px;
+      animation: fadeIn 1.5s ease-out;
+    }
+
+    .service-box {
+      background: #ffffff;
+      border-left: 5px solid #009688;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    footer {
+      background: #004d40;
+      color: #fff;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    /* Animations */
+    @keyframes fadeDown {
+      0% { opacity: 0; transform: translateY(-40px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeUp {
+      0% { opacity: 0; transform: translateY(40px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes zoomIn {
+      0% { transform: scale(0.7); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes slideInLeft {
+      0% { transform: translateX(-100px); opacity: 0; }
+      100% { transform: translateX(0); opacity: 1; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(40px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      .content-section h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Msikiti Mkuu wa Tabata</h1>
+  <p>Nguzo ya imani, elimu, na mshikamano wa jamii ya Kiislamu</p>
+</header>
+
+<section class="image-section">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Modern_mosque.jpg/800px-Modern_mosque.jpg" alt="Msikiti Mkuu wa Tabata">
+</section>
+
+<section class="content-section">
+  <h2>Kuhusu Msikiti</h2>
+  <p>Msikiti Mkuu wa Tabata ni sehemu muhimu ya jamii ya Waislamu, ukitoa huduma za ibada, elimu ya dini kupitia madrasa, na shughuli za kijamii kwa watu wa rika zote.</p>
+
+  <h2>Maadili ya Kiislamu</h2>
+  <p>Msikiti huu unahimiza maadili ya uaminifu, upendo, amani, uadilifu na heshima kwa watu wote. Inatoa miongozo ya kimaisha kwa mujibu wa Qur'an Tukufu na Hadithi.</p>
+
+  <h2>Huduma Zinazotolewa</h2>
+  <div class="service-box">🕌 Ibada za kila siku (Sala 5, Ijumaa, Ramadhan)</div>
+  <div class="service-box">📚 Madarasa kwa watoto na watu wazima (Qur’an, Fiqh, Hadithi)</div>
+  <div class="service-box">🤝 Huduma za nasaha na ushauri wa ndoa</div>
+  <div class="service-box">🎉 Shughuli za kijamii: mlo wa pamoja, usaidizi kwa maskini</div>
+
+  <h2>Madrasa</h2>
+  <p>Madrasa ya Msikiti Mkuu wa Tabata inatoa elimu ya Qur’an, Hadithi, lugha ya Kiarabu, na elimu ya dini kwa watoto na watu wazima. Inawajenga vijana kuwa na msingi bora wa imani na tabia njema.</p>
+
+  <h2>Mwenye Msikiti / Imam Mkuu</h2>
+  <p>Imam Sheikh Abdulrahman Mussa ni kiongozi wa kiroho mwenye uzoefu mkubwa, anayeheshimika kwa hekima na uwezo wake wa kuunganisha jamii kwa njia ya mawaidha na matendo ya huruma.</p>
+</section>
+
+<footer>
+  &copy; 2025 Msikiti Mkuu wa Tabata - Imani, Elimu, Amani
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,2136 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wazawa Ta Tabata (WWTBT)</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: radial-gradient(circle at center, #0f2027, #2c5364);
+      color: white;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    section {
+      width: 100vw;
+      position: relative;
+      overflow: hidden;
+    }
+    .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: linear-gradient(to right, #435bfb, #09f353);
+  color: white;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 999;
+  flex-wrap: wrap;
+}
+
+.logo {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 1.5rem;
+  font-weight: bold;
+  gap: 3px;
+  user-select: none;
+  animation: fadeInLogo 1s ease forwards;
+}
+
+.animated-logo span {
+  animation: bounceLetters 0.6s ease forwards;
+  animation-delay: calc(var(--i, 1) * 0.05s);
+}
+
+.animated-logo span:nth-child(n) {
+  --i: calc(var(--i, 1) + 1);
+}
+
+.space {
+  width: 8px;
+}
+
+@keyframes bounceLetters {
+  0% { transform: scale(0.9) translateY(10px); opacity: 0; }
+  100% { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+@keyframes fadeInLogo {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.nav-links {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 12px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.nav-links a:hover {
+  background: rgba(247, 246, 246, 0.1);
+  border-radius: 6px;
+  transform: scale(1.05);
+}
+
+.menu-icon {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.mobile-drawer {
+  position: fixed;
+  top: 70px; /* adjust based on your navbar height */
+  right: 0;
+  width: 250px;
+  height: 100vh;
+  background: #1a1a40;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  z-index: 998;
+  transform: translateX(100%); /* start hidden off-screen */
+  transition: transform 0.3s ease;
+  border-left: 2px solid #333;
+}
+
+/* When drawer is active */
+.mobile-drawer.show {
+  transform: translateX(0); /* slide in */
+}
+
+/* Optional animation if you still want keyframes */
+@keyframes slideInDrawer {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+
+.mobile-links a {
+  color: white;
+  padding: 10px 0;
+  text-decoration: none;
+  display: block;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@keyframes slideInDrawer {
+  0% { transform: translateX(100%); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+@media (max-width: 900px) {
+  .nav-links {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .mobile-drawer.show {
+    display: flex;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+    flex-wrap: wrap;
+  }
+}
+
+
+    .hero-section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-image: url('images/tbt2.jpg'); /* ← replace with your actual image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: all 1s ease;
+  color: white; /* Optional: ensure text is visible */
+}
+
+
+    .hero-content {
+      max-width: 800px;
+      width: 100%;
+      padding: 20px;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 1s ease;
+    }
+
+    .hero-content.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .icon {
+      font-size: 32px;
+      margin-bottom: 20px;
+      animation: twinkle 1s infinite alternate;
+    }
+
+    @keyframes twinkle {
+      from { opacity: 0.5; transform: scale(1); }
+      to { opacity: 1; transform: scale(1.2); }
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      line-height: 1.2;
+      color: #fff;
+    }
+
+    .highlight {
+      background: linear-gradient(to right, #ff3c41, #bd00ff, #007bff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .info-box {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 20px;
+      margin-top: 25px;
+      color: #ddd;
+      backdrop-filter: blur(10px);
+    }
+
+    .info-box h2 {
+      color: #cc66ff;
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .buttons {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .btn {
+      padding: 12px 24px;
+      font-weight: bold;
+      border: none;
+      border-radius: 30px;
+      text-decoration: none;
+      color: white;
+      display: inline-block;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .btn-story {
+      background: linear-gradient(to right, #ff2a68, #45d39f);
+    }
+
+    .btn-invest {
+      background: linear-gradient(to right, #ff9900, #3399ff);
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      opacity: 0.9;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .info-box {
+        font-size: 0.95rem;
+      }
+
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    .life-section, .transformation-section {
+      padding: 60px 20px;
+      text-align: center;
+      color: #fff;
+    }
+
+    .life-section {
+      background: linear-gradient(to right, #1a1a40, #240b36);
+    }
+
+    .transformation-section {
+      background: linear-gradient(to right, #0f2027, #2c003e, #ff7e5f);
+    }
+
+    .life-title, .transform-title {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+      background: linear-gradient(to right, #ff3c41, #00ffe0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .life-subtext, .transform-subtext {
+      font-size: 1.1rem;
+      color: #ccc;
+      margin-bottom: 40px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cards, .transform-cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .card, .transform-card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      padding: 30px 20px;
+      max-width: 400px;
+      flex: 1;
+      min-width: 250px;
+      transition: transform 0.3s ease;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+    }
+
+    .card-icon, .transform-icon {
+      font-size: 2.2rem;
+      margin-bottom: 15px;
+      width: 60px;
+      height: 60px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      font-weight: bold;
+    }
+
+    .card-icon.pink { background: linear-gradient(to right, #ff3c41, #ff6ec4); }
+    .card-icon.blue { background: linear-gradient(to right, #3399ff, #00ffe0); }
+    .card-icon.purple { background: linear-gradient(to right, #a100ff, #ff00c8); }
+    .card-icon.yellow { background: linear-gradient(to right, #ffd700, #ff9900); }
+    .transform-icon.red { background: linear-gradient(to right, #ff4e50, #ff0000); }
+    .transform-icon.green { background: linear-gradient(to right, #00b894, #00cec9); }
+    .transform-icon.pink { background: linear-gradient(to right, #ff6ec4, #ff1493); }
+
+    .card:hover, .transform-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .before-box {
+      padding: 10px;
+      font-weight: bold;
+      border-radius: 10px;
+      font-size: 0.9rem;
+    }
+
+    .red-box { background: #802020; color: #fff; }
+    .green-box { background: #1e3d2f; color: #adffcc; }
+    .pink-box { background: #4a1f2d; color: #ffc2e0; }
+
+    @media (max-width: 768px) {
+      .cards, .transform-cards {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+    
+
+    .places-section {
+      padding: 60px 20px;
+      background: linear-gradient(to right, #1a1a40, #240b36);
+      text-align: center;
+    }
+
+    .places-title {
+      font-size: 2.5rem;
+      font-weight: bold;
+      background: linear-gradient(to right, #ff3c41, #00ffe0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 10px;
+    }
+
+    .places-subtext {
+      font-size: 1.1rem;
+      color: #ccc;
+      margin-bottom: 40px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .places-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .place-card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      padding: 30px 20px;
+      transition: transform 0.3s ease;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+    }
+
+    .place-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .place-icon {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      background: linear-gradient(to right, #ff3c41, #00ffe0);
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+    }
+
+    .place-title {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .place-category {
+      background: linear-gradient(to right, #ff3c41, #00ffe0);
+      padding: 6px 20px;
+      color: white;
+      border-radius: 20px;
+      display: inline-block;
+      margin-bottom: 10px;
+      font-size: 0.85rem;
+    }
+
+    .place-desc {
+      font-size: 0.95rem;
+      color: #ccc;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .sacred-section {
+  background: linear-gradient(to right, #2c003e, #000000);
+  color: #fff;
+  padding: 60px 20px;
+  border-radius: 20px;
+  margin: 40px auto;
+  max-width: 1000px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.sacred-header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 0 10px;
+}
+
+.sacred-icon {
+  font-size: 2.5rem;
+  color: #ff69b4;
+  margin-bottom: 10px;
+}
+
+.sacred-title {
+  font-size: 2.2rem;
+  font-weight: bold;
+  background: linear-gradient(to right, #ff69b4, #00ffe0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.sacred-subtext {
+  color: #ccc;
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.sacred-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding-top: 20px;
+}
+
+.sacred-item {
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 6px solid #ff69b4;
+  padding: 15px 20px;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+  line-height: 1.7;
+  word-break: break-word;
+}
+
+.sacred-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .sacred-title {
+    font-size: 1.8rem;
+  }
+
+  .sacred-subtext {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  .sacred-item {
+    font-size: 0.95rem;
+    padding: 12px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sacred-title {
+    font-size: 1.6rem;
+  }
+
+  .sacred-item {
+    font-size: 0.92rem;
+    padding: 10px 14px;
+  }
+}
+.entertainment-section {
+  background: linear-gradient(to right, #0f2027, #2c003e);
+  color: #fff;
+  padding: 60px 20px;
+  border-radius: 20px;
+  max-width: 1000px;
+  margin: 50px auto;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.entertainment-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.entertainment-icon {
+  font-size: 2.5rem;
+  color: #00ffe0;
+  margin-bottom: 10px;
+}
+
+.entertainment-title {
+  font-size: 2.2rem;
+  font-weight: bold;
+  background: linear-gradient(to right, #ff69b4, #00ffe0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.entertainment-subtext {
+  color: #ccc;
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.entertainment-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.entertainment-item {
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 6px solid #00ffe0;
+  padding: 15px 20px;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+  line-height: 1.6;
+}
+
+.entertainment-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+@media (max-width: 768px) {
+  .entertainment-title {
+    font-size: 1.8rem;
+  }
+
+  .entertainment-subtext {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  .entertainment-item {
+    font-size: 0.95rem;
+    padding: 12px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .entertainment-title {
+    font-size: 1.6rem;
+  }
+
+  .entertainment-item {
+    font-size: 0.92rem;
+    padding: 10px 14px;
+  }
+}
+.gems-section {
+  background: linear-gradient(to right, #1a1a1a, #000000);
+  color: #fff;
+  padding: 60px 20px;
+  border-radius: 20px;
+  max-width: 1000px;
+  margin: 50px auto;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.08);
+}
+
+.gems-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.gems-icon {
+  font-size: 2.4rem;
+  color: #ffb300;
+  margin-bottom: 10px;
+}
+
+.gems-title {
+  font-size: 2.2rem;
+  font-weight: bold;
+  background: linear-gradient(to right, #ffb300, #ff00cc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gems-subtext {
+  color: #ccc;
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.gems-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.gems-item {
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 6px solid #ffb300;
+  padding: 15px 20px;
+  border-radius: 12px;
+  font-size: 1rem;
+  line-height: 1.6;
+  transition: background 0.3s ease;
+}
+
+.gems-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+@media (max-width: 768px) {
+  .gems-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gems-title {
+    font-size: 1.8rem;
+  }
+
+  .gems-item {
+    font-size: 0.95rem;
+  }
+}
+.founders-section {
+  background: linear-gradient(to right, #0d0d25, #000000);
+  padding: 60px 20px;
+  color: #fff;
+  text-align: center;
+  border-radius: 20px;
+  max-width: 1200px;
+  margin: 50px auto;
+}
+
+.founders-header {
+  margin-bottom: 40px;
+}
+
+.founders-icon {
+  font-size: 2.5rem;
+  color: #8e44ad;
+  margin-bottom: 10px;
+}
+
+.founders-title {
+  font-size: 2.4rem;
+  font-weight: bold;
+}
+.founders-title span {
+  background: linear-gradient(to right, #ff007a, #00ffd0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.founders-subtext {
+  max-width: 700px;
+  margin: 0 auto;
+  color: #ccc;
+  font-size: 1.1rem;
+}
+
+.founders-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.founder-card {
+  background: linear-gradient(to bottom right, #1e1e3f, #292942);
+  border: 2px solid #7f00ff;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s;
+}
+.founder-card:hover {
+  transform: translateY(-5px);
+}
+
+.founder-photo {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  margin: 0 auto 15px;
+  border: 3px solid #00ffd0;
+}
+
+.founder-card .role {
+  color: #a29bfe;
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+}
+
+.copy-text {
+  color: #00ffd0;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.copy-text:hover {
+  color: #ff007a;
+}
+
+@media (max-width: 768px) {
+  .founders-title {
+    font-size: 2rem;
+  }
+  .founders-subtext {
+    font-size: 1rem;
+  }
+}
+
+
+.cta-section {
+  background: linear-gradient(to right, #2e002e, #000000);
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.cta-box {
+  background-color: #0e1120;
+  color: #fff;
+  border: 4px solid;
+  border-image: linear-gradient(to right, #a020f0, #00ffe0) 1;
+  border-radius: 20px;
+  padding: 40px 30px;
+  max-width: 800px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.cta-box h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.cta-box p {
+  font-size: 1.1rem;
+  color: #ccc;
+  margin-bottom: 30px;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.btn-partner,
+.btn-learn {
+  padding: 12px 25px;
+  font-weight: bold;
+  border-radius: 12px;
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn-partner {
+  background: linear-gradient(to right, #00c9a7, #00bfff);
+}
+
+.btn-learn {
+  background: linear-gradient(to right, #ff007a, #a020f0);
+}
+
+.btn-partner:hover,
+.btn-learn:hover {
+  opacity: 0.85;
+}
+
+@media (max-width: 600px) {
+  .cta-box h2 {
+    font-size: 1.6rem;
+  }
+
+  .cta-box p {
+    font-size: 1rem;
+  }
+}
+
+.vision-section {
+  padding: 60px 20px;
+  background: linear-gradient(to right, #d4145a, #fbb03b);
+  color: #fff;
+  text-align: center;
+}
+
+.vision-header h2 {
+  font-size: 2.4rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.vision-header p {
+  font-size: 1.1rem;
+  color: #ffe6f2;
+  max-width: 800px;
+  margin: 0 auto 40px;
+}
+
+.vision-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.vision-card {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 25px 20px;
+  border-radius: 16px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+}
+
+.vision-card:hover {
+  transform: translateY(-5px);
+}
+
+.vision-icon {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+}
+
+.vision-card h3 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.vision-tags {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.tag-time,
+.tag-budget {
+  background: #fff;
+  color: #d4145a;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.vision-card p {
+  font-size: 0.95rem;
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  .vision-header h2 {
+    font-size: 1.8rem;
+  }
+  .vision-card {
+    padding: 20px 15px;
+  }
+  .vision-icon {
+    font-size: 2.2rem;
+  }
+}
+.investment-section {
+  background: linear-gradient(to right, #e94057, #f27121);
+  color: #fff;
+  padding: 60px 20px;
+  border-radius: 20px;
+  margin-top: 40px;
+}
+
+.investment-header h2 {
+  text-align: center;
+  font-size: 2.3rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.investment-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.investment-card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 25px 20px;
+  border-radius: 18px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.investment-card:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-5px);
+}
+
+.icon-circle {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.investment-card h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 6px;
+  color: #fff;
+}
+
+.highlight-text {
+  color: #a7e0ff;
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+
+.investment-card p {
+  color: #ffeef8;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+  .investment-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .investment-card {
+    padding: 20px 15px;
+  }
+
+  .icon-circle {
+    font-size: 1.8rem;
+  }
+}
+.leader-section {
+  background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+  padding: 60px 20px;
+  color: #fff;
+  text-align: center;
+}
+
+.leader-title {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #ffe600;
+}
+
+.leader-subtitle {
+  font-size: 1.1rem;
+  color: #ddd;
+  margin-bottom: 30px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.leader-image-wrapper {
+  border-radius: 20px;
+  overflow: hidden;
+  max-width: 900px;
+  margin: 0 auto;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  margin-bottom: 25px;
+}
+
+.leader-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.leader-info h3 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #00ffe0;
+}
+
+.leader-info p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+@media (max-width: 600px) {
+  .leader-title {
+    font-size: 1.7rem;
+  }
+
+  .leader-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .leader-info h3 {
+    font-size: 1.1rem;
+  }
+
+  .leader-info p {
+    font-size: 0.9rem;
+  }
+}
+
+.footer {
+  background: linear-gradient(to right, #0d0d0d, #2c1b00);
+  color: #fff;
+  padding: 60px 20px 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-column {
+  flex: 1 1 220px;
+  min-width: 220px;
+}
+
+.footer-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #bb00ff;
+}
+
+.brand {
+  color: #ff007a;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.footer-column h3 {
+  margin-bottom: 10px;
+  color: #00ffd5;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column li {
+  margin-bottom: 8px;
+}
+
+.footer-column a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.footer-column a:hover {
+  color: #00ffcc;
+}
+
+.social-icons {
+  margin-top: 15px;
+}
+
+.social-icons a {
+  color: #fff;
+  font-size: 1.2rem;
+  margin-right: 10px;
+  transition: transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
+  color: #ff00cc;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 40px;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.footer-bottom .footer-links {
+  margin: 10px 0;
+}
+
+.footer-bottom .footer-links a {
+  margin: 0 10px;
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+.footer-credit {
+  color: #bb00ff;
+  font-size: 0.95rem;
+}
+
+.footer-creator {
+  margin-top: 10px;
+  color: #00ffe0;
+  font-weight: bold;
+}
+
+.motto {
+  margin-top: 10px;
+  color: #00ff99;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #e33667;
+  color: #ffffff;
+  box-shadow: 0 3px 6px rgba(253, 9, 9, 0.1);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+
+.logo {
+  font-size: 2.2rem;
+  font-weight: 700;
+  font-family: 'Playfair Display', serif;
+  color: #ff5100; /* Bright neon aqua */
+  letter-spacing: 3px;
+  text-shadow:
+    0 0 5px #dfdf0d,
+    0 0 10px #d50d5d,
+    0 0 15px #00bfff;
+
+  animation: logoGlowSlide 1.2s ease forwards;
+  opacity: 0;
+}
+
+/* Logo Animation */
+@keyframes logoGlowSlide {
+  0% {
+    transform: translateY(-50px) scale(0.9);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(10px) scale(1.05);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+/* Optional: Hover glow boost */
+.logo:hover {
+  text-shadow:
+    0 0 10px #daf913,
+    0 0 20px #00ff55,
+    0 0 30px #ff3300;
+  transition: text-shadow 0.3s ease;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #007bff;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* Mobile Drawer */
+.mobile-drawer {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 80%;
+  height: 100%;
+  background: #f9f9f9;
+  box-shadow: -2px 0 12px rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+  z-index: 1000;
+  transition: right 0.4s ease;
+}
+
+.mobile-drawer.show {
+  right: 0;
+}
+
+.mobile-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.mobile-links a {
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #222;
+  transition: transform 0.3s;
+}
+
+.mobile-links a:hover {
+  transform: translateX(8px);
+  color: #007bff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+}
+
+.animated-logo span {
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #111111;
+  font-family: 'Playfair Display', serif;
+  opacity: 0;
+  transform: translateY(-30px) scale(0.8);
+  animation: bounceLetters 0.6s ease forwards;
+}
+
+.animated-logo span:nth-child(1) { animation-delay: 0s; }
+.animated-logo span:nth-child(2) { animation-delay: 0.05s; }
+.animated-logo span:nth-child(3) { animation-delay: 0.1s; }
+.animated-logo span:nth-child(4) { animation-delay: 0.15s; }
+.animated-logo span:nth-child(5) { animation-delay: 0.2s; }
+.animated-logo span:nth-child(6) { animation-delay: 0.25s; }
+.animated-logo span:nth-child(7) { animation-delay: 0.3s; }
+.animated-logo span:nth-child(8) { animation-delay: 0.35s; }
+.animated-logo span:nth-child(9) { animation-delay: 0.4s; }
+.animated-logo span:nth-child(10) { animation-delay: 0.45s; }
+.animated-logo span:nth-child(11) { animation-delay: 0.5s; }
+.animated-logo span:nth-child(12) { animation-delay: 0.55s; }
+.animated-logo span:nth-child(13) { animation-delay: 0.6s; }
+
+@keyframes bounceLetters {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    text-shadow: 0 0 8px #00f7ff, 0 0 15px #00f7ff;
+  }
+}
+.ccm-section {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #e0ffe4, #ffffff);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.ccm-heading {
+  text-align: center;
+  color: #007a00;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  animation: fadeInDown 1.2s ease forwards;
+}
+
+.ccm-timeline {
+  display: grid;
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.ccm-event {
+  background: #ffffff;
+  border-left: 5px solid #007a00;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  animation: fadeInUp 1s ease forwards;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.ccm-event:nth-child(1) { animation-delay: 0.2s; }
+.ccm-event:nth-child(2) { animation-delay: 0.4s; }
+.ccm-event:nth-child(3) { animation-delay: 0.6s; }
+.ccm-event:nth-child(4) { animation-delay: 0.8s; }
+.ccm-event:nth-child(5) { animation-delay: 1s; }
+
+.ccm-event h3 {
+  color: #005e00;
+  margin-bottom: 10px;
+}
+
+.ccm-event p {
+  color: #333;
+}
+
+.ccm-quote {
+  margin-top: 60px;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #008000;
+  animation: pulseGlow 2s infinite ease-in-out;
+}
+
+.ccm-quote span {
+  display: inline-block;
+  background: linear-gradient(to right, #00c800, #005e00);
+  color: white;
+  padding: 15px 25px;
+  border-radius: 50px;
+  animation: fireFlash 3s ease-in-out infinite;
+  box-shadow: 0 0 25px #00c800;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+  }
+  50% {
+    text-shadow: 0 0 30px #00ff00, 0 0 40px #00ff00;
+  }
+}
+
+@keyframes fireFlash {
+  0%, 100% {
+    box-shadow: 0 0 20px #00ff00, 0 0 40px #00ff00;
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 40px #00ff00, 0 0 80px #00ff00;
+    transform: scale(1.05);
+  }
+}
+
+  
+  </style>
+</head>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+<body>
+<header class="navbar">
+  <div class="logo animated-logo">
+    <span>W</span><span>A</span><span>Z</span><span>A</span><span>W</span><span>A</span>
+    <span class="space"></span>
+    <span>W</span><span>A</span>
+    <span>T</span><span>A</span><span>B</span><span>A</span><span>T</span><span>A</span>
+  </div>
+
+  <nav class="nav-links" id="navLinks">
+    <a href="#hero">Karibu</a>
+    <a href="#life">Maisha</a>
+    <a href="#transformation">Safari</a>
+    <a href="#places">Maeneo</a>
+    <a href="#sacred">Kiroho</a>
+    <a href="#entertainment">Burudani</a>
+    <a href="#gems">Hazina</a>
+    <a href="#founders">Waasisi</a>
+    <a href="#vision">Dira</a>
+    <a href="#investment">Uwekezaji</a>
+    <a href="#leader">Uongozi</a>
+  </nav>
+
+  <div class="menu-icon" id="menuIcon">&#9776;</div>
+</header>
+
+<div class="mobile-drawer" id="mobileDrawer">
+  <div class="mobile-links">
+    <a href="#hero" onclick="closeDrawer()">Karibu</a>
+    <a href="#life" onclick="closeDrawer()">Maisha</a>
+    <a href="#transformation" onclick="closeDrawer()">Safari</a>
+    <a href="#places" onclick="closeDrawer()">Maeneo</a>
+    <a href="#sacred" onclick="closeDrawer()">Kiroho</a>
+    <a href="#entertainment" onclick="closeDrawer()">Burudani</a>
+    <a href="#gems" onclick="closeDrawer()">Hazina</a>
+    <a href="#founders" onclick="closeDrawer()">Waasisi</a>
+    <a href="#vision" onclick="closeDrawer()">Dira</a>
+    <a href="#investment" onclick="closeDrawer()">Uwekezaji</a>
+    <a href="#leader" onclick="closeDrawer()">Uongozi</a>
+  </div>
+</div>
+
+
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="hero">
+    <div class="hero-content">
+      <div class="icon">✨</div>
+      <h1>Karibu kwenye<br><span class="highlight">Mustakabali wa Tabata</span></h1>
+      <div class="info-box">
+        <h2>Wazawa Ta Tabata (WWTBT)</h2>
+        <p>
+          Ambapo wabunifu hukutana na uhalisia – Shiriki katika mageuzi ya Tabata Segerea kutoka mtaa wa kawaida kuwa kitovu cha biashara na utamaduni kinachounda upya maisha ya mijini.
+        </p>
+      </div>
+      <div class="buttons">
+        <a href="#" class="btn btn-story">Gundua Hadithi Yetu</a>
+        <a href="#" class="btn btn-invest">Fursa za Uwekezaji</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Life Section -->
+  <section class="life-section" id="life">
+    <div class="life-container">
+      <h2 class="life-title">Maisha Tabata</h2>
+      <p class="life-subtext">
+        Shuhudia mabadiliko ya kipekee ya jamii ambayo haikukubali vizingiti – kila changamoto ikawa fursa, na kila ndoto ikawa kweli.
+      </p>
+      <div class="cards">
+        <div class="card reveal">
+          <div class="card-icon pink">👥</div>
+          <h3>Ushirikiano Usiovunjika</h3>
+          <p>
+            Jamii iliyoungana ambapo majirani huwa kama familia, wakisaidiana katika kila changamoto na kusherehekea ushindi pamoja.
+          </p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon purple">🌅</div>
+          <h3>Maisha ya Kila Siku Yenye Mvuto</h3>
+          <p>
+            Kuanzia masoko ya asubuhi yenye shamrashamra hadi mikusanyiko ya jioni chini ya nyota – maisha yanaenda kwa furaha na malengo.
+          </p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon yellow">🎓</div>
+          <h3>Elimu na Ubunifu</h3>
+          <p>
+            Shule bora, vituo vya teknolojia na mipango ya kulea vipaji vinavyoandaa kizazi kijacho cha viongozi na wajasiriamali.
+          </p>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon blue">✨</div>
+          <h3>Urithi Tajiri wa Utamaduni</h3>
+          <p>
+            Mila na desturi za karne nyingi zikiunganishwa na ubunifu wa kisasa, zikileta utambulisho wa kipekee unaovutia wageni kutoka kote kanda hii.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<section class="transformation-section" id="transformation">
+
+  <div class="transformation-container">
+    <h2 class="transform-title">Safari Yetu ya Mabadiliko ya Kushangaza</h2>
+    <p class="transform-subtext">
+      Kutoka mtaa wa kawaida hadi kuwa kituo cha mijini kinachovutia — tazama jinsi maono, juhudi na mshikamano wa jamii ulivyobadilisha Tabata Segerea kuwa mfano wa maendeleo endelevu na uhifadhi wa utamaduni.
+    </p>
+
+    <div class="transform-cards">
+      <div class="transform-card reveal">
+        <div class="transform-icon red">⚡</div>
+        <h3>Mapinduzi ya Miundombinu</h3>
+        <p>
+          Kutoka barabara za vumbi hadi barabara za kisasa zenye mifumo ya usafiri na miundombinu ya chini kwa chini.
+        </p>
+        <div class="before-box red-box">Kabla: Barabara mbovu, umeme hafifu</div>
+      </div>
+
+      <div class="transform-card reveal">
+        <div class="transform-icon green">📈</div>
+        <h3>Mabadiliko ya Kiuchumi</h3>
+        <p>
+          Kutoka uchumi wa kujikimu hadi kuwa kitovu cha biashara kinachovutia wawekezaji wa kimataifa.
+        </p>
+        <div class="before-box green-box">Kabla: Fursa chache za ajira</div>
+      </div>
+
+      <div class="transform-card reveal">
+        <div class="transform-icon pink">👪</div>
+        <h3>Uwezeshaji wa Jamii</h3>
+        <p>
+          Kuunganisha wakazi kupitia mshikamano wa pamoja, na kugeuza changamoto za mtu binafsi kuwa nguvu ya kijamii.
+        </p>
+        <div class="before-box pink-box">Kabla: Kaya zilizojitenga</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="places-section" id="places">
+
+  <h2 class="places-title">Maeneo Yanayovutia</h2>
+  <p class="places-subtext">
+    Gundua mageuzi makubwa ya Tabata Segerea – kutoka ujirani wa jadi hadi mji wa kisasa, ambapo kila kona inaonyesha hadithi ya maendeleo na mshikamano wa kijamii.
+  </p>
+
+  <div class="places-grid">
+
+  <a href="afya.html" class="place-card reveal">
+    <div class="place-icon"><i class="fas fa-heart"></i></div>
+    <div class="place-title">Vituo vya Afya na Utulivu</div>
+    <div class="place-category">Afya</div>
+    <p class="place-desc">Huduma bora za spa na afya zinazojumuisha tiba za Kiafrika na mbinu za kisasa za kupumzisha mwili na akili.</p>
+  </a>
+
+  <a href="masoko-asili.html" class="place-card reveal">
+    <div class="place-icon"><i class="fas fa-store"></i></div>
+    <div class="place-title">Masoko ya Kiasili</div>
+    <div class="place-category">Ununuzi</div>
+    <p class="place-desc">Masoko yenye bidhaa safi, kazi za mikono, na ladha halisi za utamaduni wa Tabata.</p>
+  </a>
+
+  <a href="vituo-ununuzi.html" class="place-card reveal">
+    <div class="place-icon"><i class="fas fa-shopping-cart"></i></div>
+    <div class="place-title">Vituo vya Kisasa vya Ununuzi</div>
+    <div class="place-category">Ununuzi</div>
+    <p class="place-desc">Vituo vya ununuzi vyenye maduka makubwa, burudani, na huduma mbalimbali kwa familia na vijana.</p>
+  </a>
+
+  <a href="usafiri.html" class="place-card reveal">
+    <div class="place-icon"><i class="fas fa-bus"></i></div>
+    <div class="place-title">Kitovu cha Usafiri wa Kisasa</div>
+    <div class="place-category">Usafiri</div>
+    <p class="place-desc">Mifumo ya kisasa ya usafiri inayounganisha maeneo ya Tabata na miji mingine kwa urahisi na ufanisi.</p>
+  </a>
+
+  
+  <a href="burudani.html" class="place-card reveal">
+    <div class="place-icon"><i class="fas fa-gamepad"></i></div>
+    <div class="place-title">Kituo cha Burudani</div>
+    <div class="place-category">Burudani</div>
+    <p class="place-desc">Sehemu za michezo ya video, sinema, na vituo vya starehe kwa watu wa rika zote zikiwa na teknolojia ya kisasa.</p>
+  </a>
+
+</div>
+
+</section>
+<section class="sacred-section" id="sacred">
+  <div class="sacred-header">
+    <div class="sacred-icon"><i class="fas fa-church"></i></div>
+    <h2 class="sacred-title">Maeneo ya Kiroho</h2>
+    <p class="sacred-subtext">
+      Vituo vya kiroho vinavyounganisha jamii yetu katika imani, amani, na maadili ya pamoja.
+    </p>
+  </div>
+
+  <div class="sacred-list">
+    <a href="msikiti.html" class="sacred-item reveal">
+      🕌 <strong>Msikiti Mkuu wa Tabata</strong> – Muundo wa kisasa wa Kiislamu wenye programu za kijamii.
+    </a>
+    <a href="umoja.html" class="sacred-item reveal">
+      ⛪ <strong>Kituo cha Kikristo cha Umoja</strong> – Kanisa la kisasa lenye ibada za kuvutia na programu za vijana.
+    </a>
+    
+  </div>
+</section>
+
+<section class="entertainment-section" id="entertainment">
+
+  <div class="entertainment-header">
+    <div class="entertainment-icon">🎶</div>
+    <h2 class="entertainment-title">Kituo cha Burudani</h2>
+    <p class="entertainment-subtext">Mahali ambapo kumbukumbu huundwa na mshikamano wa kijamii hukua kupitia uzoefu wa pamoja wa burudani.</p>
+  </div>
+
+<div class="entertainment-list reveal">
+  <a href="hifadhi.html" class="entertainment-item">🏞️ <strong>Hifadhi ya Tabata</strong> - Eneo la kijani la ekari 50 lenye njia za kutembea, sehemu za kuchezea watoto, na vifaa vya mazoezi ya nje.</a>
+
+  <a href="muziki-sanaa.html" class="entertainment-item">🎵 <strong>Eneo la Muziki na Sanaa</strong> - Ukumbi wa muziki, maonyesho ya sanaa, na warsha za ubunifu.</a>
+
+
+  <a href="uwanja-michezo.html" class="entertainment-item">🏀 <strong>Uwanja wa Michezo</strong> - Viwanja vya mpira wa kikapu, soka, na vyumba vya mazoezi vya kisasa.</a>
+
+  <a href="usiku.html" class="entertainment-item">🌃 <strong>Sehemu za Usiku</strong> - Vilabu vya usiku, sehemu za starehe, na burudani za jioni kwa wote.</a>
+
+  
+</div>
+
+</section>
+
+<section class="gems-section" id="gems">
+
+  <div class="gems-header">
+    <div class="gems-icon">📍</div>
+    <h2 class="gems-title">Hazina Zilizofichika Tabata</h2>
+    <p class="gems-subtext">
+      Gundua maeneo ya kipekee yanayojulikana zaidi kwa wakazi wa hapa – roho halisi ya Tabata Segerea.
+    </p>
+  </div>
+
+  <div class="gems-grid reveal">
+  <a href="machweo.html" class="gems-item">🌅 <strong>Sehemu ya Kuangalia Machweo</strong> - Mahali pazuri kwa kutafakari asubuhi na kupiga picha za mandhari.</a>
+
+  <a href="mama-noela.html" class="gems-item">🍛 <strong>Kwa Mama Noela</strong> - Eneo maarufu kwa chakula kitamu cha jadi, chakula cha jioni na mazingira ya nyumbani ya kupumzika.</a>
+
+  <a href="food-truck-paradise.html" class="gems-item">🚚 <strong>Food Truck Paradise</strong> - Vyakula vya haraka vya kitamu vinavyopikwa na wajasiriamali wa hapa.</a>
+
+  <a href="bigymata-chill.html" class="gems-item">🍃 <strong>Kwa Bigymata Chill Spot</strong> - Sehemu ya burudani na marafiki, maarufu kwa mandhari ya utulivu na starehe ya asili.</a>
+</div>
+
+</section>
+<section class="founders-section" id="founders">
+
+  <div class="founders-header">
+    <div class="founders-icon">👥</div>
+    <h2 class="founders-title">Tunakutana na <span>Waasisi Wetu</span></h2>
+    <p class="founders-subtext">
+      Watu saba wa kipekee waliounganishwa na maono ya pamoja ya kuibadilisha Tabata Segerea kuwa kitovu cha ubunifu, utamaduni, na maisha endelevu.
+    </p>
+  </div>
+
+  <div class="founders-grid reveal">
+    <!-- Mmoja -->
+    <div class="founder-card">
+      <div class="founder-photo" style="background-image: url(images/Boys\ attitude\ profile\ picture.jpg);"></div>
+      <h3>Rumahrumah</h3>
+      <p class="role">Mwenyeketi wa Bodi</p>
+      <p><strong>Makao:</strong> Tabata Segerea (BS street)</p>
+      <p><strong>Mawasiliano:</strong> <span class="copy-text" onclick="copyText('mutasingwa1@icloud.com')">mutasingwa1@icloud.com</span></p>
+    </div>
+
+    <!-- Mbili -->
+    <div class="founder-card">
+      <div class="founder-photo" style="background-image: url(images/Profile\ pic.jpg);"></div>
+      <h3>Mdudu</h3>
+      <p class="role">Mkurugenzi Mtendaji Mkuu</p>
+      <p><strong>Makao:</strong> Tabata Segerea</p>
+      <p><strong>Mawasiliano:</strong> <span class="copy-text" onclick="copyText('mdudu@gmail.com')">mdudu@gmail.com</span></p>
+    </div>
+
+    <!-- Tatu -->
+    <div class="founder-card">
+      <div class="founder-photo" style="background-image: url(images/67cdbb81-b98a-4097-9fe3-973d0ea16052.jpg);"></div>
+      <h3>Mbamba</h3>
+      <p class="role">Mkurugenzi wa Uendeshaji</p>
+      <p><strong>Makao:</strong> Tabata Segerea</p>
+      <p><strong>Mawasiliano:</strong> <span class="copy-text" onclick="copyText('mbamba@gmail.com')">mbamba@gmail.com</span></p>
+    </div>
+
+    <!-- Nne -->
+    <div class="founder-card">
+      <div class="founder-photo" style="background-image: url(images/Boys\ attitude\ profile\ picture.jpg);"></div>
+      <h3>Chuli</h3>
+      <p class="role">Mkurugenzi wa Masoko</p>
+      <p><strong>Makao:</strong> Tabata Segerea</p>
+      <p><strong>Mawasiliano:</strong> <span class="copy-text" onclick="copyText('chuli@gmail.com')">chuli@gmail.com</span></p>
+    </div>
+
+    <!-- Tano -->
+    <div class="founder-card">
+      <div class="founder-photo" style="background-image: url(images/Sad\ Lofi_.jpg);"></div>
+      <h3>Rodger</h3>
+      <p class="role">Mshauri wa Maendeleo Endelevu</p>
+      <p><strong>Makao:</strong> Tabata Segerea</p>
+      <p><strong>Mawasiliano:</strong> <span class="copy-text" onclick="copyText('rodger@gmail.com')">rodger@gmail.com</span></p>
+    </div>
+
+    <!-- Sita -->
+    <div class="founder-card">
+      <div class="founder-photo" style="background-image: url(images/F!ck.jpg);"></div>
+      <h3>Kiduku</h3>
+      <p class="role">Mkurugenzi wa Ubunifu</p>
+      <p><strong>Makao:</strong> Tabata Segerea</p>
+      <p><strong>Mawasiliano:</strong> <span class="copy-text" onclick="copyText('kiduku@gmail.com')">kiduku@gmail.com</span></p>
+    </div>
+
+    <!-- Saba -->
+    <div class="founder-card">
+      <div class="founder-photo" style="background-image: url(images/giggle.jpg);"></div>
+      <h3>HD</h3>
+      <p class="role">Mkurugenzi wa Usimamizi</p>
+      <p><strong>Makao:</strong> Tabata Segerea</p>
+      <p><strong>Mawasiliano:</strong> <span class="copy-text" onclick="copyText('hd@gmail.com')">hd@gmail.com</span></p>
+    </div>
+  </div>
+</section>
+<section class="cta-section" id="cta">
+
+  <div class="cta-box">
+    <h2>Jiunge Nasi</h2>
+    <p>
+      Pamoja, hatujengi miundombinu tu – bali tunaunda mustakabali wa miji ya Kiafrika kwa jamii moja baada ya nyingine.
+    </p>
+    <div class="cta-buttons">
+      <a href="https://wa.me/255746210442" target="_blank" class="btn-partner">Shirikiana Nasi</a>
+      <a href="#learn-more" class="btn-learn">Jifunze Zaidi</a>
+    </div>
+  </div>
+</section>
+<section class="vision-section" id="vision">
+
+  <div class="vision-header">
+    <h2>Dira 2030: Mustakabali Umefika</h2>
+    <p>
+      Tabata Segerea haikui tu – inalipuka kuelekea mustakabali kama kitovu bora cha uwekezaji na utamaduni Afrika Mashariki.
+    </p>
+  </div>
+
+  <div class="vision-grid">
+    <!-- Kituo cha Biashara la Dunia -->
+    <a href="biashara.html" class="vision-card">
+  <div class="vision-icon">🏢</div>
+  <h3>Kituo cha Biashara la Dunia</h3>
+  <div class="vision-tags">
+    <span class="tag-time">2024–2027</span>
+    <span class="tag-budget">$50M+</span>
+  </div>
+  <p>Kuigeuza Tabata kuwa kitovu cha kimataifa cha biashara, hoteli za kifahari, na kumbi za mikutano za kiwango cha juu.</p>
+</a>
+
+<a href="bonde.html" class="vision-card">
+  <div class="vision-icon">💻</div>
+  <h3>Bonde la Ubunifu wa Kiteknolojia</h3>
+  <div class="vision-tags">
+    <span class="tag-time">2025–2028</span>
+    <span class="tag-budget">$75M+</span>
+  </div>
+  <p>Kitovu cha AI, vituo vya ubunifu, na maabara za uvumbuzi zitakazovutia vipaji vya kimataifa.</p>
+</a>
+
+<a href="mazingira.html" class="vision-card">
+  <div class="vision-icon">🌳</div>
+  <h3>Hifadhi ya Mazingira ya Mjini</h3>
+  <div class="vision-tags">
+    <span class="tag-time">2026–2029</span>
+    <span class="tag-budget">$30M+</span>
+  </div>
+  <p>Eneo la kijani lenye bustani, mabwawa, njia za kutembea, na mafunzo ya mazingira kwa jamii.</p>
+</a>
+
+
+
+</section>
+
+<section class="investment-section" id="investment">
+
+  <div class="investment-header">
+    <h2>🔥 Fursa Moto za Uwekezaji</h2>
+  </div>
+
+  <div class="investment-grid">
+    <div class="investment-card">
+      <div class="icon-circle">📈</div>
+      <h3>Nyumba za Kifahari</h3>
+      <span class="highlight-text">500% Faida</span>
+      <p>Thamani ya mali inaongezeka kwa 300% kila mwaka kutokana na maendeleo ya makazi ya kifahari na biashara.</p>
+    </div>
+
+    <div class="investment-card">
+      <div class="icon-circle">👥</div>
+      <h3>Ushirikiano wa Biashara</h3>
+      <span class="highlight-text">200% Ukuaji</span>
+      <p>Miradi ya pamoja na wajasiriamali wa ndani ikileta mifano ya biashara endelevu na faida kubwa.</p>
+    </div>
+
+    <div class="investment-card">
+      <div class="icon-circle">⚡</div>
+      <h3>Kituo cha Ubunifu</h3>
+      <span class="highlight-text">1000% Ukuaji</span>
+      <p>Vituo vya ubunifu na startups zenye msaada wa serikali na wawekezaji wa kimataifa.</p>
+    </div>
+
+    <div class="investment-card">
+      <div class="icon-circle">✈️</div>
+      <h3>Miundombinu ya Utalii</h3>
+      <span class="highlight-text">400% Faida</span>
+      <p>Hoteli, migahawa na sehemu za burudani zinazowahudumia mamilioni ya watalii kila mwaka.</p>
+    </div>
+  </div>
+</section>
+<section class="leader-section" id="leader">
+
+  <div class="leader-container">
+    <h2 class="leader-title">Uongozi wa Segerea</h2>
+    <p class="leader-subtitle">Picha ya pamoja na Mwenyekiti wa Segerea na timu ya maendeleo ya mtaa</p>
+    <div class="leader-image-wrapper">
+      <img src="images/blunt.jpg" alt="Picha ya Mwenyekiti wa Segerea na Timu" class="leader-image">
+    </div>
+    <div class="leader-info">
+      <h3>Mwenyekiti: Mhe. Ramadhan Juma</h3>
+      <p>Mtaa wa Segerea, Tabata | 📞 0744 123 456 | ✉️ mwenyekiti@segerea.go.tz</p>
+    </div>
+  </div>
+</section>
+
+<!-- CCM Glorification Section -->
+<section class="ccm-section">
+  <div class="ccm-container">
+    <h2 class="ccm-heading">🟢 Mchango wa CCM katika Maendeleo ya Tabata Segerea</h2>
+
+    <div class="ccm-timeline">
+      <div class="ccm-event">
+        <h3>🏗️ Miundombinu Imara</h3>
+        <p>CCM imeongoza juhudi za ujenzi wa barabara kuu zinazounganisha Tabata Segerea na maeneo mengine ya jiji.</p>
+      </div>
+
+      <div class="ccm-event">
+        <h3>🏥 Afya na Huduma za Jamii</h3>
+        <p>Kupitia mipango ya serikali, vituo vya afya, zahanati na huduma za mama na mtoto zimeimarishwa.</p>
+      </div>
+
+      <div class="ccm-event">
+        <h3>🏫 Elimu kwa Wote</h3>
+        <p>Shule mpya zimejengwa na zile za zamani kukarabatiwa – kuhakikisha kila mtoto anapata elimu bora.</p>
+      </div>
+
+      <div class="ccm-event">
+        <h3>💡 Umeme na Maji</h3>
+        <p>Mradi wa REA na miradi ya maji safi imesaidia kuinua maisha ya wakazi wa Segerea.</p>
+      </div>
+
+      <div class="ccm-event">
+        <h3>🏘️ Makazi na Ujenzi</h3>
+        <p>Uhamasishaji wa ujenzi wa nyumba bora umeleta mabadiliko makubwa ya kimaendeleo mitaani.</p>
+      </div>
+    </div>
+
+    <div class="ccm-quote">
+      <p>🔥 <span>Kidumu Chama Tawala cha CCM</span> 🔥</p>
+    </div>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-column">
+      <h2><span class="brand">WWTBT</span><br><span class="footer-title">Wazawa Ta Tabata</span></h2>
+      <p>Kuongoza mageuzi ya Tabata Segerea kuwa kituo bora cha biashara, utamaduni na maisha endelevu Afrika Mashariki.</p>
+    </div>
+
+    <div class="footer-column">
+      <h3>Viungo Muhimu</h3>
+      <ul>
+        <li><a href="#">Maisha Yetu</a></li>
+        <li><a href="#">Maeneo ya Kutembelea</a></li>
+        <li><a href="#">Maono 2030</a></li>
+        <li><a href="#">Fursa za Uwekezaji</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3>Huduma</h3>
+      <ul>
+        <li><a href="#">Maendeleo ya Biashara</a></li>
+        <li><a href="#">Uwekezaji wa Majengo</a></li>
+        <li><a href="#">Utalii wa Kiutamaduni</a></li>
+        <li><a href="#">Mikakati ya Jamii</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3>Wasiliana Nasi</h3>
+      <p>📍 Tabata Segerea, Dar es Salaam</p>
+      <p>📧 <a href="mailto:info@wazawatatabata.com">info@wazawatatabata.com</a></p>
+      <p>📞 <a href="tel:+255700000000">+255 746 210 442</a></p>
+      <p>🌐 <a href="https://www.tabatasegerea.com" target="_blank">1738rumanyika@gmail.com</a></p>
+      <div class="social-icons">
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/255746210442" aria-label="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="mailto:info@wazawatatabata.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      </div>
+      <p class="motto">🔧 Kujenga Kesho, Leo</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 Wazawa wa Tabata (WWTBT). Haki zote zimehifadhiwa.</p>
+    <div class="footer-links">
+      <a href="#">Sera ya Faragha</a>
+      <a href="#">Masharti</a>
+      <a href="#">Mawasiliano</a>
+    </div>
+    <p class="footer-credit">🚀 <span class="highlight">Kubadilisha Tabata Segerea kuwa kesho ya maendeleo ya miji Afrika</span></p>
+    <p class="footer-creator">🧠 Imetengenezwa na <strong>Lewis Mutah Lutinwa aka Rumahrumah</strong></p>
+  </div>
+</footer>
+
+
+
+
+
+
+
+
+  <script>
+  // === Reveal on scroll ===
+  function revealOnScroll() {
+    const reveals = document.querySelectorAll(".reveal");
+    reveals.forEach((el) => {
+      const windowHeight = window.innerHeight;
+      const elementTop = el.getBoundingClientRect().top;
+      const elementVisible = 100;
+      if (elementTop < windowHeight - elementVisible) {
+        el.classList.add("active");
+      }
+    });
+  }
+
+  // === Hero section fade on load ===
+  window.addEventListener('load', () => {
+    document.getElementById('hero')?.classList.add('visible');
+    document.querySelector('.hero-content')?.classList.add('visible');
+    revealOnScroll(); // run once on load
+  });
+
+  window.addEventListener('scroll', () => {
+    revealOnScroll();
+
+    // Leader image animation
+    const leaderImg = document.querySelector('.leader-image-wrapper');
+    if (leaderImg) {
+      const sectionTop = leaderImg.getBoundingClientRect().top;
+      const screenHeight = window.innerHeight;
+      if (sectionTop < screenHeight - 100) {
+        leaderImg.style.opacity = 1;
+        leaderImg.style.transform = 'translateY(0)';
+      }
+    }
+  });
+
+  // === Copy email to clipboard ===
+  function copyText(text) {
+    navigator.clipboard.writeText(text).then(() => {
+      alert('Barua pepe imenakiliwa: ' + text);
+    });
+  }
+
+  // === Investment card hover effects ===
+  document.querySelectorAll('.investment-card').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      card.style.boxShadow = '0 0 20px rgba(255, 255, 255, 0.3)';
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)';
+    });
+  });
+
+  // === Mobile drawer nav toggle ===
+  const menuIcon = document.getElementById('menuIcon');
+  const mobileDrawer = document.getElementById('mobileDrawer');
+
+  menuIcon.addEventListener('click', () => {
+    mobileDrawer.classList.toggle('show');
+  });
+
+  function closeDrawer() {
+    mobileDrawer.classList.remove('show');
+  }
+</script>
+<script>
+  function toggleMenu() {
+    const drawer = document.querySelector('.mobile-drawer');
+    drawer.classList.toggle('show');
+  }
+</script>
+
+<script>
+  // Reveal on scroll
+  const events = document.querySelectorAll('.ccm-event');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  events.forEach(event => {
+    observer.observe(event);
+  });
+</script>
+
+
+<style>
+  .leader-image-wrapper {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-in-out;
+  }
+</style> 
+
+
+<style>
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.7s ease;
+  }
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hifadhi ya Tabata‑Segerea</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    body, html { margin:0; padding:0; font-family: 'Segoe UI', sans-serif; background:#f0f4f8; color:#333; }
+    header { text-align:center; padding:60px 20px; background:linear-gradient(135deg,#43cea2,#185a9d); color:white; }
+    header h1 { font-size:3rem; animation:fadeInDown 1s; }
+    header p { font-size:1.2rem; margin-top:10px; animation:fadeInUp 1.2s; }
+
+    section { max-width:1000px; margin:40px auto; padding:0 20px; }
+    .park-card { background:white; border-radius:12px; margin-bottom:40px; box-shadow:0 10px 30px rgba(0,0,0,0.1); overflow:hidden; animation:pop 1s ease; }
+    .park-card img { width:100%; height:auto; }
+    .park-content { padding:20px; }
+    .park-content h2 { margin:0; color:#185a9d; animation:slideInLeft 1s; }
+    .park-content p { line-height:1.6; margin:15px 0; }
+    .map-container { width:100%; height:300px; border:none; border-radius:8px; overflow:hidden; animation:fadeIn 1.5s; }
+
+    footer { background:#185a9d; color:white; text-align:center; padding:20px; }
+    a { color:#43cea2; text-decoration:none; }
+    a:hover { text-decoration:underline; }
+
+    @keyframes fadeInDown { from{opacity:0; transform:translateY(-50px);} to{opacity:1;transform:translateY(0);} }
+    @keyframes fadeInUp { from{opacity:0; transform:translateY(50px);} to{opacity:1;transform:translateY(0);} }
+    @keyframes slideInLeft { from{opacity:0; transform:translateX(-50px);} to{opacity:1;transform:translateX(0);} }
+    @keyframes pop { from{opacity:0; transform:scale(0.95);} to{opacity:1;transform:scale(1);} }
+    @keyframes fadeIn { from{opacity:0;} to{opacity:1;} }
+    @media (max-width:600px){ header h1{font-size:2rem;} }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Hifadhi za Tabata‑Segerea</h1>
+  <p>Gundua hifadhi za asili, bustani za jamii, na bustani za faraja karibu yako.</p>
+</header>
+
+<section>
+
+  <!-- Serenity Safari Park -->
+  <div class="park-card">
+    <img src="https://source.unsplash.com/featured/?safari,park" alt="Serenity Safari Park">
+    <div class="park-content">
+      <h2>Serenity Safari Park</h2>
+      <p>Mahali pa kupumua, kuogelea, na kufurahia asili ya asili. Ziwa lina upepo hufaa kwa mikutano, burudani, na mitindo ya picha.</p>
+      <p><strong>Umiliki:</strong> Serenity Leisure Ltd.</p>
+      <p><strong>Viashiria vya kipekee:</strong> Ziwa la asili, bustani, ukumbi wa mikutano, sehemu ya swim, na mgahawa wa maji.</p>
+      <p><strong>Jinsi ya kufika:</strong> Chukua daladala A6 kutoka kituo cha Tabata kwa Sh 400, au bega‑au‑bega.</p>
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=...SerenityParkTabata..." allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fantasy Park -->
+  <div class="park-card">
+    <img src="https://source.unsplash.com/featured/?theme,park" alt="Fantasy Park">
+    <div class="park-content">
+      <h2>Fantasy Park</h2>
+      <p>Ukumbi wa burudani, carousel, warsha za sanaa, na minitrek kwa watoto wadogo. Mazingira ya picha za Instagram zilizochanganuliwa!</p>
+      <p><strong>Umiliki:</strong> Tabata Entertainment Co.</p>
+      <p><strong>Vipengele vidogo:</strong> Carousel, warsha ya uchoraji, hatua za muziki, na maji‑stage ya watoto.</p>
+      <p><strong>Jinsi ya kufika:</strong> Pikipiki toka kituo cha Segerea kwa TSH 300, au tembea dakika 10 kutoka Tabata barabara kuu.</p>
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=...FantasyParkTabata..." allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hifadhi Mbali: Pugu Hills & Kazimzumbwi -->
+  <div class="park-card">
+    <img src="https://source.unsplash.com/featured/?forest,Tanzania" alt="Pugu Hills & Kazimzumbwi">
+    <div class="park-content">
+      <h2>Pugu Hills & Kazimzumbwi</h2>
+      <p>Moja ya misitu ya kale duniani ndani megacity. Nyasi kubwa, mwinyo wa ndege wa asili, milango ya pepo, na vikarango vya asili.</p>
+      <p><strong>Kumbukumbu:</strong> Mradi wa kuhifadhi misitu wa TFS tangu 1936/2006 :contentReference[oaicite:2]{index=2}.</p>
+      <p><strong>Viashiria:</strong> Migodi ya matope, maziwa kidogo, vipepeo, ndege, na mwinyo wa miti.</p>
+      <p><strong>Jinsi ya kufika:</strong> Chukua dala A7 hadi Pugu, kisha tembea 3 km au taxi ndani ya TSH 1,500.</p>
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=...PuguKazimzumbwi..." allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<footer>
+  &copy; 2025 Maeneo ya Burudani Tabata‑Segerea | <a href="index.html">Rudi Mwanzo ⬅️</a>
+</footer>
+</body>
+</html>

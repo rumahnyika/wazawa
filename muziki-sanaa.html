@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eneo la Muziki na Sanaa – Tabata Segerea</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      font-family: 'Segoe UI', sans-serif;
+      background: #111;
+      color: #eee;
+    }
+
+    header {
+      padding: 60px 20px;
+      text-align: center;
+      background: linear-gradient(135deg, #ff416c, #ff4b2b);
+      animation: fadeDown 1s ease-out;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    section {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .venue-card {
+      background: #222;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(255, 75, 43, 0.3);
+      animation: popGlow 1s ease;
+      transition: transform 0.3s ease;
+    }
+
+    .venue-card:hover {
+      transform: scale(1.01);
+    }
+
+    .venue-card:nth-child(even) {
+      box-shadow: 0 0 20px rgba(255, 65, 110, 0.3);
+    }
+
+    .venue-card img {
+      width: 100%;
+      height: auto;
+      filter: brightness(0.8);
+      transition: transform 0.5s ease;
+    }
+
+    .venue-card:hover img {
+      transform: scale(1.03);
+    }
+
+    .content {
+      padding: 20px;
+    }
+
+    .content h2 {
+      margin-bottom: 10px;
+      color: #ff8a65;
+      animation: slideIn 1s ease;
+    }
+
+    .content p {
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+
+    .map {
+      width: 100%;
+      height: 260px;
+      border: none;
+      border-radius: 8px;
+      margin-top: 15px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      animation: fadeIn 1.5s ease;
+    }
+
+    .btn-back {
+      display: inline-block;
+      margin: 40px 0 20px;
+      padding: 10px 20px;
+      background: #ff4b2b;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+
+    .btn-back:hover {
+      background: #ff416c;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #222;
+      font-size: 0.9rem;
+    }
+
+    /* Animations */
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(-60px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes popGlow {
+      0% { transform: scale(0.95); opacity: 0; }
+      50% { transform: scale(1.02); opacity: 1; }
+      100% { transform: scale(1); }
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Eneo la Muziki na Sanaa</h1>
+  <p>Burudika na utamaduni katika maeneo ya muziki wa moja kwa moja na maonyesho ya sanaa Tabata Segerea.</p>
+</header>
+
+<section>
+
+  <!-- Segerea Lounge & Grill -->
+  <div class="venue-card">
+    <img src="https://source.unsplash.com/featured/?live-music,band" alt="Segerea Lounge">
+    <div class="content">
+      <h2>Segerea Lounge & Grill</h2>
+      <p><strong>Huduma:</strong> Bendi ya moja kwa moja kila Jumamosi, Karaoke Jumatatu, DJ Night Jumatano.</p>
+      <p><strong>Mahali:</strong> Karibu na Segerea Bus Stand.</p>
+      <p><strong>Mawasiliano:</strong> Simu: <a href="tel:+255718500241">+255 718 500 241</a></p>
+      <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3979.8373437657435!2d39.2183!3d-6.8223!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwNDknMjAuMiJTIDM5wrAxMycwNi40IkU!5e0!3m2!1ssw!2stz!4v1680000000000" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <!-- Ale Bush Pub -->
+  <div class="venue-card">
+    <img src="https://source.unsplash.com/featured/?pub,night" alt="Ale Bush Pub">
+    <div class="content">
+      <h2>Ale Bush Pub & BBQ</h2>
+      <p><strong>Huduma:</strong> Bendi ya BBQ kila Ijumaa, nyama choma, vinywaji vya kisasa, na karaoke usiku wa Jumamosi.</p>
+      <p><strong>Mahali:</strong> Kisinia, Tabata Segerea.</p>
+      <p><strong>Mawasiliano:</strong> <a href="tel:+255753574927">+255 753 574 927</a></p>
+      <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3979.8373437657435!2d39.2183!3d-6.8223!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x185c4da7fda1c08f%3A0x8a62e4b8592a5ee2!2sKisinia%20Tabata!5e0!3m2!1ssw!2stz!4v1680000000001" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <!-- Blessing Hall -->
+  <div class="venue-card">
+    <img src="https://source.unsplash.com/featured/?concert,stage" alt="Blessing Hall">
+    <div class="content">
+      <h2>Blessing Hall</h2>
+      <p><strong>Huduma:</strong> Send-off parties, DJ mashup events, matukio ya mitindo, na sinema za hadhara.</p>
+      <p><strong>Mahali:</strong> Segerea Rd, karibu na Kiwanja cha Ndege cha Tabata.</p>
+      <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3979.8373437657435!2d39.2183!3d-6.8223!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwNDknMjAuMiJTIDM5wrAxMycwNi40IkU!5e0!3m2!1ssw!2stz!4v1680000000000" allowfullscreen></iframe>
+    </div>
+  </div>
+
+</section>
+
+<div style="text-align:center;">
+  <a class="btn-back" href="index.html">⬅️ Rudi kwenye Mwanzo</a>
+</div>
+
+<footer>
+  &copy; 2025 Burudani ya Tabata Segerea • Muziki & Sanaa kwa Wote
+</footer>
+
+</body>
+</html>

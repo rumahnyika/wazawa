@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sehemu za Machweo - Tabata Segerea</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(to right, #ff5e62, #ff9966);
+      color: white;
+      padding: 2rem;
+      text-align: center;
+      animation: slideIn 1s ease-in-out;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
+
+    .section {
+      padding: 2rem 1.5rem;
+      max-width: 1100px;
+      margin: auto;
+      animation: fadeUp 1s ease-in-out;
+    }
+
+    .place-card {
+      background: white;
+      margin: 2rem 0;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .place-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .place-content {
+      padding: 1.2rem;
+    }
+
+    .place-card h3 {
+      margin: 0 0 0.5rem;
+      color: #ff5e62;
+    }
+
+    .place-card p {
+      margin: 0.5rem 0 0;
+    }
+
+    .place-img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    .map-container {
+      width: 100%;
+      height: 300px;
+      border: none;
+      display: block;
+    }
+
+    @keyframes slideIn {
+      from { transform: translateY(-50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🌅 Sehemu za Kuangalia Machweo</h1>
+    <p>Mahali pazuri Tabata Segerea kwa kutafakari, kupumzika, na kuangalia machweo ya jua</p>
+  </header>
+
+  <section class="section">
+
+    <!-- Location 1 -->
+    <div class="place-card">
+      <img src="images/mpira.jpg" class="place-img" alt="Uwanja wa Segerea B">
+      <div class="place-content">
+        <h3>1. Uwanja wa Segerea B (Karibu na Segerea Primary)</h3>
+        <p>Eneo la wazi linalofaa kwa machweo, tafakari za asubuhi, na picha nzuri. Ni maarufu miongoni mwa wakazi wa karibu.</p>
+      </div>
+      <iframe class="map-container" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1984.4391956327867!2d39.15114277726203!3d-6.832938493177664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x185c4c15058b50f3%3A0x9b1389c692c5ac61!2sSegerea%20Primary!5e0!3m2!1sen!2stz!4v1719717453112!5m2!1sen!2stz" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+
+    <!-- Location 2 -->
+    <div class="place-card">
+      <img src="images/milima.jpg" class="place-img" alt="Kilima cha Gome">
+      <div class="place-content">
+        <h3>2. Kilima cha Gome (Tabata Kimanga)</h3>
+        <p>Mahali pa juu penye mwonekano wa jiji. Panavutia kwa kupiga picha na kutafakari kwa amani wakati wa asubuhi au jioni.</p>
+      </div>
+      <iframe class="map-container" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1984.6094456870148!2d39.1537461772619!3d-6.830260193180062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x185c4c1eb7f76f35%3A0x2d898b4dc979f08f!2sTabata%20Kimanga!5e0!3m2!1sen!2stz!4v1719717548802!5m2!1sen!2stz" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+
+    <!-- Location 3 -->
+    <div class="place-card">
+      <img src="images/asubuhi.jpg" class="place-img" alt="Kona ya Mbuyuni">
+      <div class="place-content">
+        <h3>3. Kona ya Mbuyuni (Segerea Road)</h3>
+        <p>Eneo lenye miti mikubwa ya asili. Ni tulivu na linafaa kwa mazungumzo ya asubuhi au kufurahia upepo wa jioni.</p>
+      </div>
+      <iframe class="map-container" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1984.2516213744158!2d39.15505007726206!3d-6.836137993174313!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x185c4c1f84d42975%3A0xd0d6b188b4f3d683!2sGreen%20Light%20Pub%20Segerea!5e0!3m2!1sen!2stz!4v1719717651234!5m2!1sen!2stz" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+
+    <!-- Location 4 -->
+    <div class="place-card">
+      <img src="images/jua.jpg" class="place-img" alt="Viwanja vya Kiwalani">
+      <div class="place-content">
+        <h3>4. Viwanja vya Kiwalani – Segerea Border</h3>
+        <p>Mahali panapofaa kwa kutembea asubuhi, kupumua hewa safi, na kuona anga la machweo kwa upana.</p>
+      </div>
+      <iframe class="map-container" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1984.1896504436977!2d39.15947667726206!3d-6.8371439931733985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x185c4c20817e7c3f%3A0xc9ad40b16df89de!2sKiwalani!5e0!3m2!1sen!2stz!4v1719717698123!5m2!1sen!2stz" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+
+    <!-- Location 5 -->
+    <div class="place-card">
+      <img src="images/mskiti.jpg" class="place-img" alt="Msikiti wa Ijumaa">
+      <div class="place-content">
+        <h3>5. Nyuma ya Msikiti wa Ijumaa – Segerea</h3>
+        <p>Kivuli cha miti mingi na ukimya wa asubuhi hufanya eneo hili kuwa tulivu kwa tafakari binafsi na maombi ya faragha.</p>
+      </div>
+      <iframe class="map-container" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1984.346010241903!2d39.15792687726201!3d-6.834598993175783!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x185c4c2125c542f5%3A0x6468eb6e2635df5a!2sSegerea%20Central%20Mosque!5e0!3m2!1sen!2stz!4v1719717739156!5m2!1sen!2stz" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+
+  </section>
+
+</body>
+</html>

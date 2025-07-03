@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vituo vya Kisasa vya Ununuzi - Tabata Segerea</title>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f8f9fa;
+      color: #333;
+    }
+
+    .shopping-header {
+      background: linear-gradient(to right, #ff7e5f, #feb47b);
+      color: white;
+      text-align: center;
+      padding: 80px 20px 60px;
+      animation: fadeInDown 1s ease-in-out forwards;
+    }
+
+    .shopping-header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+
+    .shopping-header p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: auto;
+      line-height: 1.6;
+      opacity: 0.9;
+    }
+
+    .shopping-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 40px;
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .shopping-card {
+      background: white;
+      padding: 30px 25px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      text-align: center;
+      animation: popBounce 0.9s ease forwards;
+      animation-fill-mode: both;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .shopping-card:nth-child(1) { animation-delay: 0s; }
+    .shopping-card:nth-child(2) { animation-delay: 0.1s; }
+    .shopping-card:nth-child(3) { animation-delay: 0.2s; }
+    .shopping-card:nth-child(4) { animation-delay: 0.3s; }
+
+    .shopping-card i {
+      font-size: 2.8rem;
+      color: #ff7e5f;
+      margin-bottom: 15px;
+      animation: pulseGlow 2s infinite;
+    }
+
+    .shopping-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+      color: #222;
+    }
+
+    .shopping-card p {
+      font-size: 1rem;
+      color: #555;
+      line-height: 1.5;
+    }
+
+    .shopping-card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    }
+
+    .shopping-footer {
+      text-align: center;
+      padding: 25px;
+      background: #fff4e6;
+      font-size: 0.9rem;
+      color: #444;
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-40px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes popBounce {
+      0% {
+        opacity: 0;
+        transform: scale(0.8) translateY(60px);
+      }
+      60% {
+        opacity: 1;
+        transform: scale(1.05) translateY(-10px);
+      }
+      100% {
+        transform: scale(1) translateY(0);
+      }
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% {
+        text-shadow: 0 0 10px #ff7e5f88, 0 0 20px #feb47b55;
+      }
+      50% {
+        text-shadow: 0 0 20px #ff7e5fcc, 0 0 30px #feb47bcc;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .shopping-header h1 {
+        font-size: 2.2rem;
+      }
+      .shopping-header p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="shopping-header">
+    <h1>Vituo vya Kisasa vya Ununuzi</h1>
+    <p>Tembelea na ujionee vituo vya ununuzi vya kisasa vyenye huduma bora, maduka mengi na mazingira ya kuvutia ndani ya Tabata Segerea.</p>
+  </header>
+
+  <section class="shopping-grid">
+    <div class="shopping-card">
+      <i class="fas fa-shopping-bag"></i>
+      <h3>Maduka Makubwa</h3>
+      <p>Maduka ya mikoa mbalimbali yanayouza bidhaa za kila siku, mavazi, na vifaa vya nyumbani kwa bei nafuu.</p>
+    </div>
+
+    <div class="shopping-card">
+      <i class="fas fa-utensils"></i>
+      <h3>Kahawa na Migahawa</h3>
+      <p>Mahali pa kupumzika na kufurahia chakula bora, vinywaji na huduma za kipekee kwa familia na marafiki.</p>
+    </div>
+
+    <div class="shopping-card">
+      <i class="fas fa-movie"></i>
+      <h3>Kina Cinema</h3>
+      <p>Sinema za kisasa zinazowasilisha filamu mpya na burudani mbalimbali kwa wateja wa Tabata Segerea.</p>
+    </div>
+
+    <div class="shopping-card">
+      <i class="fas fa-tshirt"></i>
+      <h3>Duka la Mavazi</h3>
+      <p>Magunia ya mavazi ya mitindo ya kisasa na jadi, yanayopatikana kwa urahisi katika vituo vya ununuzi.</p>
+    </div>
+  </section>
+
+  <footer class="shopping-footer">
+    <p>&copy; 2025 Tabata Vision | Vituo vya Kisasa vya Ununuzi</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bonde la Ubunifu wa Kiteknolojia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(to bottom right, #0f0c29, #302b63, #24243e);
+      color: white;
+      line-height: 1.6;
+      overflow-x: hidden;
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      color: #00ffc3;
+      animation: fadeInDown 1s ease-in-out;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+      color: #ddd;
+      animation: fadeInUp 1s ease-in-out;
+    }
+
+    section {
+      max-width: 1000px;
+      margin: auto;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 15px;
+      padding: 30px;
+      margin-bottom: 40px;
+      box-shadow: 0 0 15px rgba(0, 255, 200, 0.2);
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    h2 {
+      color: #00ffd1;
+      margin-bottom: 15px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 12px;
+      transition: transform 0.5s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px #00ffc3;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>💻 Bonde la Ubunifu wa Kiteknolojia</h1>
+    <p>Tabata Segerea inageuzwa kuwa kitovu cha kimataifa cha teknolojia na biashara – AI, ubunifu na uvumbuzi!</p>
+  </header>
+
+  <section>
+    <h2>🌟 Maono Yetu</h2>
+    <p>Bonde hili litaweka Tabata Segerea kwenye ramani ya dunia kama mji wa kisasa unaowezesha vipaji vya vijana, watafiti, na wabunifu. Lengo kuu ni kuunda mazingira ya kazi na maendeleo ya kiteknolojia kwa kushirikiana na sekta binafsi, taasisi za elimu, na wawekezaji.</p>
+  </section>
+
+  <section>
+    <h2>📈 Njia ya Kufanikisha Maono</h2>
+    <ul>
+      <li>Kuanzisha maabara za ubunifu na incubators za startups</li>
+      <li>Kujenga kituo kikuu cha AI & Robotics</li>
+      <li>Kuwezesha vijana kwa mafunzo ya kisasa ya ICT</li>
+      <li>Kushirikiana na makampuni makubwa kama Microsoft, Google Africa, na Meta</li>
+      <li>Kuboresha miundombinu ya intaneti – 5G & fiber optics</li>
+      <li>Kutoa vivutio kwa wawekezaji wa teknolojia kupitia tax breaks</li>
+      <li>Kujenga Smart Hub yenye coworking spaces, lounges, AR/VR labs</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>🖼️ Mabadiliko Yanavyoonekana (Picha Halisi)</h2>
+    <div class="gallery">
+      <img src="images/majengo.jpg" alt="Tech Lab">
+      <img src="images/ofisi.jpg" alt="Modern Office">
+      <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d" alt="Startup Hub">
+    </div>
+  </section>
+
+  <section>
+    <h2>📍 Mahali: Tabata Segerea</h2>
+    <p>Mwitikio wa jamii ni mkubwa. Vijana wengi tayari wanaanzisha miradi ya ubunifu. Serikali kupitia CCM na wadau binafsi wameanza kutenga maeneo rasmi ya kiteknolojia kwa utekelezaji.</p>
+  </section>
+
+  <footer>
+    <p>© 2025 Tabata Vision | Kidumu Chama Tawala cha CCM ✊🏽</p>
+  </footer>
+
+  <script>
+    // Simple scroll animation (optional)
+    document.addEventListener("DOMContentLoaded", () => {
+      const sections = document.querySelectorAll("section");
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.animation = "fadeIn 1s forwards";
+          }
+        });
+      }, { threshold: 0.1 });
+
+      sections.forEach(sec => {
+        sec.style.opacity = 0;
+        observer.observe(sec);
+      });
+    });
+  </script>
+</body>
+</html>

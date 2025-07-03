@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Burudani - Tabata Segerea</title>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f2f6f9;
+      color: #333;
+    }
+
+    .burudani-header {
+      background: linear-gradient(to right, #ff512f, #dd2476);
+      color: white;
+      text-align: center;
+      padding: 80px 20px 60px;
+      animation: fadeInDown 1s ease-in-out forwards;
+    }
+
+    .burudani-header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    .burudani-header p {
+      font-size: 1.2rem;
+      max-width: 750px;
+      margin: auto;
+      opacity: 0.9;
+      line-height: 1.6;
+    }
+
+    .entertainment-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 35px;
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .ent-card {
+      background: white;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      animation: popBounce 0.9s ease forwards;
+      animation-fill-mode: both;
+      transition: transform 0.3s ease;
+    }
+
+    .ent-card:hover {
+      transform: scale(1.04);
+      box-shadow: 0 20px 30px rgba(0,0,0,0.15);
+    }
+
+    .ent-card i {
+      font-size: 2.5rem;
+      color: #dd2476;
+      margin-bottom: 15px;
+      animation: pulseGlow 2s infinite;
+    }
+
+    .ent-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 8px;
+      color: #222;
+    }
+
+    .ent-card p {
+      font-size: 1rem;
+      margin: 5px 0;
+      color: #555;
+    }
+
+    .ent-card .location,
+    .ent-card .phone {
+      font-weight: bold;
+      color: #444;
+    }
+
+    .burudani-footer {
+      text-align: center;
+      padding: 30px;
+      background: #ffe3ec;
+      color: #444;
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    @keyframes fadeInDown {
+      0% { opacity: 0; transform: translateY(-40px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(40px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes popBounce {
+      0% { opacity: 0; transform: scale(0.8) translateY(60px); }
+      60% { opacity: 1; transform: scale(1.05) translateY(-10px); }
+      100% { transform: scale(1) translateY(0); }
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% { text-shadow: 0 0 10px #ff4b7088, 0 0 20px #dd247655; }
+      50% { text-shadow: 0 0 20px #ff4b70cc, 0 0 30px #dd2476cc; }
+    }
+
+    @media (max-width: 768px) {
+      .burudani-header h1 { font-size: 2.3rem; }
+      .burudani-header p { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="burudani-header">
+    <h1>Vituo vya Burudani Tabata Segerea</h1>
+    <p>Jiburudishe katika maeneo mbalimbali ya starehe yaliyojaa muziki, michezo, chakula na huduma bora ndani ya Segerea na maeneo ya jirani.</p>
+  </header>
+
+  <section class="entertainment-grid">
+    <div class="ent-card">
+      <i class="fas fa-music"></i>
+      <h3>Club 1994 Lounge</h3>
+      <p class="location">📍 Barabara ya Segerea - Karibu na Kituo cha Polisi</p>
+      <p class="phone">📞 0754 123 456</p>
+      <p>Mahali pa starehe usiku, muziki wa DJ, na vinywaji vya kisasa. Usalama umeimarishwa.</p>
+    </div>
+
+    <div class="ent-card">
+      <i class="fas fa-glass-cheers"></i>
+      <h3>Chill Point Segerea</h3>
+      <p class="location">📍 Segerea Road, Mtaa wa Mwisho</p>
+      <p class="phone">📞 0712 987 321</p>
+      <p>Kiota cha familia kilicho na vyakula vya asili, live music, na mazingira tulivu ya nje.</p>
+    </div>
+
+    <div class="ent-card">
+      <i class="fas fa-theater-masks"></i>
+      <h3>Royal Arcade & Cinema</h3>
+      <p class="location">📍 Tabata Rd - Opp. Masjid Quba</p>
+      <p class="phone">📞 0689 456 789</p>
+      <p>Sinema za kisasa na michezo ya arcade kwa watoto na vijana kila siku ya wiki.</p>
+    </div>
+
+    <div class="ent-card">
+      <i class="fas fa-drum"></i>
+      <h3>Mwembe Yanga Grounds</h3>
+      <p class="location">📍 Mwisho wa Barabara ya Segerea - Viwanja vya Umma</p>
+      <p class="phone">📞 0734 222 111</p>
+      <p>Uwanja wa burudani za jukwaani, tamasha za tamaduni na show za live band kila mwezi.</p>
+    </div>
+  </section>
+
+  <footer class="burudani-footer">
+    <p>&copy; 2025 Tabata Vision | Burudani na Starehe</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sehemu za Usiku – Tabata Segerea</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body, html {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #0d0d0d;
+      color: #eee;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background: linear-gradient(135deg, #4b0082, #8a2be2);
+      padding: 60px 20px;
+      text-align: center;
+      animation: glowPulse 3s ease-in-out infinite;
+    }
+    header h1 {
+      font-size: 3rem;
+      letter-spacing: 3px;
+      text-shadow: 0 0 10px #bb33ff;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.8;
+      font-weight: 500;
+    }
+    main {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+      flex: 1;
+    }
+    .venue-card {
+      background: #1a1a2e;
+      border-radius: 15px;
+      margin-bottom: 40px;
+      box-shadow: 0 0 20px rgba(139, 0, 255, 0.5);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: slideUpFade 1s ease forwards;
+      cursor: pointer;
+    }
+    .venue-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 30px rgba(255, 0, 255, 0.8);
+    }
+    .venue-card img {
+      width: 100%;
+      height: auto;
+      filter: brightness(0.8);
+      transition: transform 0.5s ease;
+    }
+    .venue-card:hover img {
+      transform: scale(1.05);
+    }
+    .venue-content {
+      padding: 25px;
+    }
+    .venue-content h2 {
+      color: #bb33ff;
+      font-size: 2rem;
+      margin-bottom: 12px;
+      text-shadow: 0 0 8px #bb33ff;
+    }
+    .venue-content p {
+      line-height: 1.6;
+      margin-bottom: 14px;
+      font-size: 1rem;
+      color: #ddd;
+    }
+    .venue-content a {
+      color: #dd99ff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .venue-content a:hover {
+      text-decoration: underline;
+    }
+    iframe.map {
+      width: 100%;
+      height: 260px;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(139, 0, 255, 0.5);
+      margin-top: 15px;
+      animation: fadeIn 1.3s ease forwards;
+    }
+    .btn-back {
+      display: block;
+      max-width: 200px;
+      margin: 40px auto 60px;
+      padding: 12px 25px;
+      background: #bb33ff;
+      color: #fff;
+      text-align: center;
+      font-weight: 700;
+      border-radius: 12px;
+      text-decoration: none;
+      box-shadow: 0 0 15px #bb33ff;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+    .btn-back:hover {
+      background: #8a2be2;
+      box-shadow: 0 0 25px #dd99ff;
+    }
+    footer {
+      background: #1a1a2e;
+      color: #bbb;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      box-shadow: inset 0 2px 6px #000;
+    }
+
+    /* Animations */
+    @keyframes glowPulse {
+      0%, 100% { text-shadow: 0 0 20px #bb33ff, 0 0 40px #8a2be2;}
+      50% { text-shadow: 0 0 40px #dd99ff, 0 0 80px #bb33ff; }
+    }
+    @keyframes slideUpFade {
+      0% {opacity: 0; transform: translateY(40px);}
+      100% {opacity: 1; transform: translateY(0);}
+    }
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      .venue-content h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Sehemu za Usiku – Tabata Segerea</h1>
+  <p>Vile vile usiku, furahia vilabu vya ubora, shisha, kibao kata, na chakula cha kipekee!</p>
+</header>
+
+<main>
+
+  <!-- K Club - Vilabu & Shisha -->
+  <article class="venue-card" tabindex="0">
+    <img src="https://images.unsplash.com/photo-1549924231-f129b911e442?auto=format&fit=crop&w=900&q=80" alt="K Club Vilabu" />
+    <div class="venue-content">
+      <h2>K Club – Vilabu vya Usiku & Shisha</h2>
+      <p><strong>Maelezo:</strong> K Club ni moja ya vilabu maarufu katika Tabata Segerea, ikitoa burudani za kisasa, muziki wa DJ, shisha ya aina mbalimbali, na mandhari ya kuvutia usiku kucha.</p>
+      <p><strong>Huduma:</strong> Shisha za harufu tofauti, sehemu za kucheza, snacks za kipekee, na maeneo ya kibao kata yenye mapishi ya mwongozo.</p>
+      <p><strong>Mahali:</strong> Tabata Mtaa Mkuu, karibu na soko kuu.</p>
+      <p><strong>Mawasiliano:</strong> <a href="tel:+255712345678">+255 712 345 678</a></p>
+      <iframe class="map" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3979.8!2d39.218!3d-6.822!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x185c4da7fda1c08f%3A0x123456789abcdef!2sTabata%20Market!5e0!3m2!1ssw!2stz!4v1680000000005" allowfullscreen title="K Club Location"></iframe>
+    </div>
+  </article>
+
+  <!-- Chillax Lounge & Eatery -->
+  <article class="venue-card" tabindex="0">
+    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=900&q=80" alt="Chillax Lounge" />
+    <div class="venue-content">
+      <h2>Chillax Lounge & Eatery</h2>
+      <p><strong>Maelezo:</strong> Sehemu ya starehe kwa familia na vijana, ikitoa chakula cha usiku, kibao kata, na vinywaji vya kipekee pamoja na muziki wa maisha ya jioni.</p>
+      <p><strong>Huduma:</strong> Shisha, cocktails, chakula cha haraka, na maeneo ya kucheza pool.</p>
+      <p><strong>Mahali:</strong> Karibu na Tabata Bus Stand, Barabara ya Segerea.</p>
+      <p><strong>Mawasiliano:</strong> <a href="tel:+255754321987">+255 754 321 987</a></p>
+      <iframe class="map" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3979.8!2d39.218!3d-6.822!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x185c4da7fda1c08f%3A0x8a62e4b8592a5ee2!2sSegerea%20Bus%20Stand!5e0!3m2!1ssw!2stz!4v1680000000006" allowfullscreen title="Chillax Lounge Location"></iframe>
+    </div>
+  </article>
+
+  <!-- Shisha Paradise -->
+  <article class="venue-card" tabindex="0">
+    <img src="https://images.unsplash.com/photo-1542736667-069246bdbc8a?auto=format&fit=crop&w=900&q=80" alt="Shisha Paradise" />
+    <div class="venue-content">
+      <h2>Shisha Paradise</h2>
+      <p><strong>Maelezo:</strong> Shisha Paradise ni mojawapo ya maeneo ya shisha bora Tabata, ikiwa na aina mbalimbali za shisha pamoja na mandhari ya kimataifa na muziki wa kivita wa vibanda vya nje.</p>
+      <p><strong>Huduma:</strong> Shisha, vinywaji baridi, kibao kata, na mezani pa michezo ya mcheza pool.</p>
+      <p><strong>Mahali:</strong> Tabata Segerea, karibu na duka la mitumba.</p>
+      <p><strong>Mawasiliano:</strong> <a href="tel:+255765432109">+255 765 432 109</a></p>
+      <iframe class="map" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3979.8!2d39.218!3d-6.822!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x185c4da7fda1c08f%3A0x5c9e4d5e7d7d9e11!2sTabata%20Market!5e0!3m2!1ssw!2stz!4v1680000000007" allowfullscreen title="Shisha Paradise Location"></iframe>
+    </div>
+  </article>
+
+  <!-- Kibao Kata Spot -->
+  <article class="venue-card" tabindex="0">
+    <img src="https://images.unsplash.com/photo-1516685304081-de7947d419d0?auto=format&fit=crop&w=900&q=80" alt="Kibao Kata Spot" />
+    <div class="venue-content">
+      <h2>Kibao Kata Spot</h2>
+      <p><strong>Maelezo:</strong> Mahali pazuri pa kupata kibao kata tamu za nyumbani na nyama choma moto moto kwa jioni zako za burudani Tabata.</p>
+      <p><strong>Huduma:</strong> Nyama choma, samaki wa kukaanga, wali na maharagwe, na supu za kienyeji.</p>
+      <p><strong>Mahali:</strong> Barabara ya Segerea, karibu na stendi ya daladala.</p>
+      <p><strong>Mawasiliano:</strong> <a href="tel:+255723456789">+255 723 456 789</a></p>
+      <iframe class="map" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3979.8!2d39.218!3d-6.822!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x185c4da7fda1c08f%3A0x8f7c60bd8f9313a2!2sSegerea%20Bus%20Stand!5e0!3m2!1ssw!2stz!4v1680000000008" allowfullscreen title="Kibao Kata Location"></iframe>
+    </div>
+  </article>
+
+</main>
+
+<a href="index.html" class="btn-back" aria-label="Rudi Mwanzo">⬅️ Rudi Mwanzo</a>
+
+<footer>
+  &copy; 2025 Sehemu za Usiku – Tabata Segerea. Furahia usiku kwa amani na burudani.
+</footer>
+
+</body>
+</html>

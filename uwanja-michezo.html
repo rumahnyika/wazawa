@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Uwanja wa Michezo – Tabata Segerea</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body, html {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f7f9;
+      color: #333;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+      animation: fadeDown 1s ease-out forwards;
+    }
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+    main {
+      flex: 1;
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+      width: 100%;
+    }
+    .court-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      margin-bottom: 40px;
+      overflow: hidden;
+      animation: popIn 1s ease forwards;
+      transform-origin: center;
+      transition: transform 0.3s ease;
+      cursor: default;
+    }
+    .court-card:hover {
+      transform: scale(1.03);
+    }
+    .court-card img {
+      width: 100%;
+      height: auto;
+      filter: brightness(0.9);
+      transition: transform 0.5s ease;
+    }
+    .court-card:hover img {
+      transform: scale(1.05);
+    }
+    .court-content {
+      padding: 20px;
+    }
+    .court-content h2 {
+      font-size: 1.8rem;
+      color: #2a5298;
+      margin-bottom: 10px;
+      animation: slideIn 1s ease forwards;
+    }
+    .court-content p {
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+    .court-content a {
+      color: #1e3c72;
+      text-decoration: none;
+    }
+    .court-content a:hover {
+      text-decoration: underline;
+    }
+    iframe.map-box {
+      width: 100%;
+      height: 260px;
+      border: none;
+      border-radius: 8px;
+      margin-top: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      animation: fadeIn 1.2s ease forwards;
+    }
+    .btn-back {
+      display: inline-block;
+      margin: 30px auto 60px;
+      padding: 12px 30px;
+      background: #2a5298;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s ease;
+      text-align: center;
+    }
+    .btn-back:hover {
+      background: #1e3c72;
+    }
+    footer {
+      background: #1e3c72;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+    }
+
+    /* Animations */
+    @keyframes fadeDown {
+      from {opacity: 0; transform: translateY(-50px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    @keyframes popIn {
+      from {opacity: 0; transform: scale(0.9);}
+      to {opacity: 1; transform: scale(1);}
+    }
+    @keyframes slideIn {
+      from {opacity: 0; transform: translateX(-60px);}
+      to {opacity: 1; transform: translateX(0);}
+    }
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      .court-content h2 {
+        font-size: 1.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Uwanja wa Michezo – Tabata Segerea</h1>
+  <p>Tembelea na shiriki kwenye viwanja vya soka, kikapu & mazoezi ya kisasa!</p>
+</header>
+
+<main>
+  <!-- Football Pitch -->
+  <article class="court-card" tabindex="0">
+    <img src="https://source.unsplash.com/featured/?football,field" alt="Uwanja wa Soka Tabata" />
+    <div class="court-content">
+      <h2>Uwanja wa Soka – Tabata Segerea</h2>
+      <p><strong>Matumizi:</strong> Mechi za kikundi, afya za jamii, michezo maridadi.</p>
+      <p><strong>Muda ya mazoezi:</strong> Jumapili & Jumatano, saa 4:00–6:00 pm</p>
+      <p><strong>Mahali:</strong> Karibu Tabata Segerea Bus Stand, eneo la Tabata Streets P4.</p>
+      <p><strong>Mbinu za kufika:</strong> Chukua dala dala aina A7, kushuka Tabata Stand – tembea 200 m.</p>
+      <iframe class="map-box" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3979.8!2d39.218!3d-6.822!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwNDknMjAuMiJTIDM5wrAxMycwNi40IkU!5e0!3m2!1ssw!2stz!4v1680000000002" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Uwanja wa Soka Tabata Segerea Map"></iframe>
+    </div>
+  </article>
+
+  <!-- Basketball Court -->
+  <article class="court-card" tabindex="0">
+    <img src="https://source.unsplash.com/featured/?basketball,court" alt="Uwanja wa Kikapu Segerea" />
+    <div class="court-content">
+      <h2>Kikapu – Segerea Basketball Club</h2>
+      <p><strong>Huduma:</strong> Mazoezi ya kikapu, mashindano ya vijana, mafunzo ya SBC.</p>
+      <p><strong>Wanaongoza:</strong> Segerea Basketball Club (SBC) – <a href="https://www.facebook.com/segereabasketballclub" target="_blank" rel="noopener">Facebook</a></p>
+      <p><strong>Muda wa mchezo:</strong> Jumamosi & Jumapili, saa 3:00–5:00 pm</p>
+      <p><strong>Mahali:</strong> Uwanja wa Pentagon, Segerea Rd – ndani Tabata Segerea.</p>
+      <iframe class="map-box" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3979.8!2d39.218!3d-6.822!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x185c4da7fda1c08f%3A0x8a62e4b8592a5ee2!2sSegerea%20Basketball%20Club!5e0!3m2!1ssw!2stz!4v1680000000003" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Segerea Basketball Club Map"></iframe>
+    </div>
+  </article>
+
+  <!-- Outdoor Gym -->
+  <article class="court-card" tabindex="0">
+    <img src="https://source.unsplash.com/featured/?outdoor,gym" alt="Gym Outdoor Tabata" />
+    <div class="court-content">
+      <h2>Gym ya Nje – Tabata Segerea</h2>
+      <p><strong>Huduma:</strong> Mazoezi ya nguvu, yoga, burpees, mafunzo ya Tabata kama jamii.</p>
+      <p><strong>Shughuli za Michezo ya Jamii:</strong> Burpees za Tabata, yoga kila asubuhi saa 6:00–7:00 am</p>
+      <p><strong>Mahali:</strong> Jukwaa la Tabata Playground karibu na barabara kuu.</p>
+      <iframe class="map-box" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3979.8!2d39.218!3d-6.822!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x185c4da7fda1c08f%3A0x123456789abcdef!2sTabata%20Outdoor%20Gym!5e0!3m2!1ssw!2stz!4v1680000000004" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Tabata Outdoor Gym Map"></iframe>
+    </div>
+  </article>
+</main>
+
+
+
+<footer>
+  &copy; 2025 Uwanja wa Michezo – Tabata Segerea
+</footer>
+
+</body>
+</html>

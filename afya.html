@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Huduma za Afya - Tabata Segerea</title>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f8f9fa;
+      color: #333;
+    }
+
+    .afya-header {
+      background: linear-gradient(to right, #43cea2, #185a9d);
+      color: white;
+      text-align: center;
+      padding: 80px 20px 60px;
+      animation: fadeInDown 1s ease-in-out forwards;
+    }
+
+    .afya-header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+
+    .afya-header p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: auto;
+      line-height: 1.6;
+      opacity: 0.9;
+    }
+
+    .afya-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 40px;
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .afya-card {
+      background: white;
+      padding: 30px 25px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      text-align: center;
+      animation: popBounce 0.9s ease forwards;
+      animation-fill-mode: both;
+    }
+
+    .afya-card:nth-child(1) { animation-delay: 0s; }
+    .afya-card:nth-child(2) { animation-delay: 0.1s; }
+    .afya-card:nth-child(3) { animation-delay: 0.2s; }
+    .afya-card:nth-child(4) { animation-delay: 0.3s; }
+
+    .afya-card i {
+      font-size: 2.8rem;
+      color: #43cea2;
+      margin-bottom: 15px;
+      animation: pulseGlow 2s infinite;
+    }
+
+    .afya-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+      color: #222;
+    }
+
+    .afya-card p {
+      font-size: 1rem;
+      color: #555;
+      line-height: 1.5;
+    }
+
+    .afya-card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    }
+
+    .afya-footer {
+      text-align: center;
+      padding: 25px;
+      background: #e0f2f1;
+      font-size: 0.9rem;
+      color: #444;
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-40px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes popBounce {
+      0% {
+        opacity: 0;
+        transform: scale(0.8) translateY(60px);
+      }
+      60% {
+        opacity: 1;
+        transform: scale(1.05) translateY(-10px);
+      }
+      100% {
+        transform: scale(1) translateY(0);
+      }
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% {
+        text-shadow: 0 0 10px #43cea288, 0 0 20px #185a9d55;
+      }
+      50% {
+        text-shadow: 0 0 20px #43cea2cc, 0 0 30px #185a9dcc;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .afya-header h1 {
+        font-size: 2.2rem;
+      }
+      .afya-header p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="afya-header">
+    <h1>Huduma za Afya na Utulivu</h1>
+    <p>Furahia tiba za asili, huduma za kisasa na utulivu wa kipekee ndani ya Tabata Segerea.</p>
+  </header>
+
+  <section class="afya-grid">
+    <div class="afya-card">
+      <i class="fas fa-spa"></i>
+      <h3>Spa za Kiafrika</h3>
+      <p>Spa zinazotumia mitishamba ya asili kutuliza mwili na kuboresha mzunguko wa damu.</p>
+    </div>
+
+    <div class="afya-card">
+      <i class="fas fa-hands"></i>
+      <h3>Huduma za Massage</h3>
+      <p>Wataalamu wa massage wa kienyeji na kisasa wakitumia mafuta ya asili na mazingira tulivu.</p>
+    </div>
+
+    <div class="afya-card">
+      <i class="fas fa-clinic-medical"></i>
+      <h3>Kliniki za Kisasa</h3>
+      <p>Kituo cha afya kilicho na vifaa vya kisasa, madaktari bingwa na huduma za haraka.</p>
+    </div>
+
+    <div class="afya-card">
+      <i class="fas fa-leaf"></i>
+      <h3>Tiba Asilia</h3>
+      <p>Waganga wa jadi wanaotibu kwa mimea na njia za kienyeji zilizo salama na kufanyiwa tathmini.</p>
+    </div>
+  </section>
+
+  <footer class="afya-footer">
+    <p>&copy; 2025 Tabata Vision | Huduma za Afya</p>
+  </footer>
+
+</body>
+</html>
